@@ -38,8 +38,7 @@ div.container {
     background-position: center center;
     background-attachment: fixed;
 
-    background-color: blueviolet;
-
+    background-color: #49B8FA;
 
 }
 
@@ -60,7 +59,6 @@ div.container div#container-pokedex div#pokedex {
     display: flex;
     width: 90%;
     height: 100%;
-
 
 }
 
@@ -140,7 +138,7 @@ div.container div#container-pokedex div#pokedex div#pokedex-left div#border-viso
     width: 85%;
     height: 60%;
     padding: 2%;
-    border-radius: 10px;
+    border-radius: 8px;
     border: 1px solid rgba(0, 0, 0, .7);
 
 
@@ -189,11 +187,14 @@ div.container div#container-pokedex div#pokedex div#pokedex-left div#border-viso
     width: 90%;
     height: 90%;
 
-    background-image: url("../images/forest.png");
+    /*background-image: url("../images/pokebola-neon.png");
     background-repeat: no-repeat;
     background-size: auto;
-    background-position: center center;
+    background-position: center center;*/
+
+    background-color: #49B8FA;
     border: 1px solid rgba(0, 0, 0, .7);
+    border-radius: 5px;
 
 }
 
@@ -213,12 +214,13 @@ div.container div#container-pokedex div#pokedex div#pokedex-left div#container-b
     justify-content: center;
     align-items: center;
     background-color:#52AF5F;
-    width: 35%;
-    height: 35%;
+    width: 40%;
+    height: 40%;
     border-radius: 3px;
     border: 1px solid rgba(0, 0, 0, .7);
     font-family: 'VT323', monospace;
-    font-size: 2rem;
+    padding: 1%;
+    font-size: 2.5rem;
 
 }
 
@@ -282,7 +284,7 @@ div.container div#container-pokedex div#pokedex div#pokedex-right {
     background-color: #D30A40;
     border: 5px solid rgba(0, 0, 0, .7);
     border-left: 15px solid rgba(0, 0, 0, .7);
-    border-radius: 10px;
+    border-radius: 8px;
     box-shadow: 7px 7px 10px #000000;
 
 }
@@ -315,6 +317,7 @@ div.container div#pokemon-list div#pokemon-card {
     box-shadow: 5px 5px 7px #000000;
     transition: transform 0.5s;
     cursor: pointer;
+    border-radius: 3px;
 
 }
 
