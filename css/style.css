@@ -78,36 +78,59 @@ div.container div#container-pokedex div#pokedex div#pokedex-left {
 
 }
 
-div.container div#container-pokedex div#pokedex div#pokedex-left div#container-leds-top {
+div.container div#container-pokedex div#pokedex div#pokedex-left div#container-leds-top-main {
+
+    display: flex;
+    width: 100%;
+    height: 22%;
+    margin-bottom: 5%;
+    padding: 1%;
+
+}
+
+div.container div#container-pokedex div#pokedex div#pokedex-left div#container-leds-top-main div#container-leds-top {
 
     display: flex;
     justify-content: space-between;
     align-self: flex-start;
 
     width: 50%;
-    height: 15%;
-    margin: 3%;
+    height: 100%;
+    margin: 1%;
+
 }
 
-div.container div#container-pokedex div#pokedex div#pokedex-left div#container-leds-top > div {
+div.container div#container-pokedex div#pokedex div#pokedex-left div#container-leds-top-main div#container-leds-top > div {
 
     width: 10%;
-    height: 25%;
+    height: 22%;
     border-radius: 100%;
-    border: 2px solid rgba(0, 0, 0, .7);
+    border: 1px solid rgba(0, 0, 0, .7);
     
 }
 
-div.container div#container-pokedex div#pokedex div#pokedex-left div#container-leds-top div#led-blue {
+div.container div#container-pokedex div#pokedex div#pokedex-left div#container-leds-top-main div#container-leds-top div#container-led-blue {
 
-    width: 40%;
+    width: 50%;
     height: 100%;
-    background-color: #146BA0;
-    border: 10px solid #dddddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #dddddd;
 
 }
 
-div.container div#container-pokedex div#pokedex div#pokedex-left div#container-leds-top div#led-red {
+div.container div#container-pokedex div#pokedex div#pokedex-left div#container-leds-top-main div#container-leds-top div#container-led-blue div#led-blue {
+
+    width: 80%;
+    height: 80%;
+    border-radius: 100%;
+    border: 1px solid rgba(0, 0, 0, .7);
+    background-color: #146BA0;
+
+}
+
+div.container div#container-pokedex div#pokedex div#pokedex-left div#container-leds-top-main div#container-leds-top div#led-red {
 
 
     background-color: #7A0000;
@@ -115,18 +138,17 @@ div.container div#container-pokedex div#pokedex div#pokedex-left div#container-l
 
 }
 
-div.container div#container-pokedex div#pokedex div#pokedex-left div#container-leds-top div#led-yellow {
+div.container div#container-pokedex div#pokedex div#pokedex-left div#container-leds-top-main div#container-leds-top div#led-yellow {
     
     background-color: #CEB005;
  
 }
 
-div.container div#container-pokedex div#pokedex div#pokedex-left div#container-leds-top div#led-green {
+div.container div#container-pokedex div#pokedex div#pokedex-left div#container-leds-top-main div#container-leds-top div#led-green {
 
     background-color: #23703B;
 
 }
-
 
 div.container div#container-pokedex div#pokedex div#pokedex-left div#border-visor {
 
@@ -135,7 +157,7 @@ div.container div#container-pokedex div#pokedex div#pokedex-left div#border-viso
     justify-content: center;
     align-items: center;
     background-color: #dddddd;
-    width: 85%;
+    width: 80%;
     height: 60%;
     padding: 2%;
     border-radius: 8px;
@@ -151,6 +173,7 @@ div.container div#container-pokedex div#pokedex div#pokedex-left div#border-viso
    align-items: center;
    width: 20%;
    height: 5%;
+   margin-bottom: 2%;
 
 }
 
@@ -160,15 +183,17 @@ div.container div#container-pokedex div#pokedex div#pokedex-left div#border-viso
     height: 10px;
     background-color: #DE072D;
     border-radius: 100%;
-    border: 2px solid rgba(0, 0, 0, .7);
+    border: 1px solid rgba(0, 0, 0, .7);
 
 }
 
 div.container div#container-pokedex div#pokedex div#pokedex-left div#border-visor div#container-led-bottom {
 
     display: flex;
-    align-self: flex-start;
+    justify-content: space-between;
     margin: 1%;
+    margin-top: 4%;
+    width: 95%;
 
 }
 
@@ -178,7 +203,26 @@ div.container div#container-pokedex div#pokedex div#pokedex-left div#border-viso
     height: 20px;
     background-color: #DE072D;
     border-radius: 100%;
-    border: 2px solid rgba(0, 0, 0, .7);
+    border: 1px solid rgba(0, 0, 0, .7);
+
+}
+
+div.container div#container-pokedex div#pokedex div#pokedex-left div#border-visor div#container-led-bottom div#container-audio-exit {
+
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+    height: 100%;
+
+}
+
+div.container div#container-pokedex div#pokedex div#pokedex-left div#border-visor div#container-led-bottom div#container-audio-exit div#audio-exit {
+
+    width: 100%;
+    height: 25%;
+    margin: 4%;
+    background-color: #222222;
+    border-radius: 20px;
 
 }
 
@@ -187,13 +231,13 @@ div.container div#container-pokedex div#pokedex div#pokedex-left div#border-viso
     width: 90%;
     height: 90%;
 
-    /*background-image: url("../images/pokebola-neon.png");
+    background-image: url("../images/forest-visor.png");
     background-repeat: no-repeat;
     background-size: auto;
-    background-position: center center;*/
+    background-position: center center;
 
     /*background-color: #49B8FA;*/
-    background-color: #1d95df;
+    /*background-color: #1d95df;*/
     border: 1px solid rgba(0, 0, 0, .7);
     border-radius: 5px;
 
@@ -209,14 +253,89 @@ div.container div#container-pokedex div#pokedex div#pokedex-left div#container-b
 
 }
 
-div.container div#container-pokedex div#pokedex div#pokedex-left div#container-bottom-left div#visor-pokemon-name {
+div.container div#container-pokedex div#pokedex div#pokedex-left div#container-bottom-left div#container-button-circulo {
+
+    display: flex;
+    width: 22%;
+    height: 100%;
+
+}
+
+div.container div#container-pokedex div#pokedex div#pokedex-left div#container-bottom-left div#container-button-circulo div#button-circulo {
+
+    display: flex;
+    width: 70%;
+    height: 45%;
+    margin: 15%;
+    border-radius: 100%;
+    border: 1px solid rgba(0, 0, 0, .7);
+    background-color: #222222;
+    transition: all 0.1s;
+    cursor: pointer; 
+
+}
+
+div.container div#container-pokedex div#pokedex div#pokedex-left div#container-bottom-left div#container-button-circulo div#button-circulo:hover {
+
+    transform: scale(0.9);
+
+}
+
+div.container div#container-pokedex div#pokedex div#pokedex-left div#container-bottom-left div#container-name-and-buttons {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 40%;
+    height: 80%;
+
+}
+
+div.container div#container-pokedex div#pokedex div#pokedex-left div#container-bottom-left div#container-name-and-buttons div#container-buttons-on-off {
+
+    display: flex;
+    justify-content: space-between;
+    height: 20%;
+
+}
+
+div.container div#container-pokedex div#pokedex div#pokedex-left div#container-bottom-left div#container-name-and-buttons div#container-buttons-on-off > div{
+
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, .7);
+    border-radius: 20px;
+    color: #dddddd;
+    background-color: red;
+    transition: all 0.1s;
+    cursor: pointer;
+
+}
+
+div.container div#container-pokedex div#pokedex div#pokedex-left div#container-bottom-left div#container-name-and-buttons div#container-buttons-on-off div#button-on{
+
+ 
+    background-color: blue;
+
+}
+
+div.container div#container-pokedex div#pokedex div#pokedex-left div#container-bottom-left div#container-name-and-buttons div#container-buttons-on-off > div:hover{
+
+    transform: scale(0.9);
+
+}
+
+div.container div#container-pokedex div#pokedex div#pokedex-left div#container-bottom-left div#container-name-and-buttons div#visor-pokemon-name {
 
     display: flex;
     justify-content: center;
     align-items: center;
     background-color:#52AF5F;
-    width: 40%;
-    height: 40%;
+    width: 100%;
+    height: 50%;
     border-radius: 3px;
     border: 1px solid rgba(0, 0, 0, .7);
     font-family: 'VT323', monospace;
@@ -232,7 +351,7 @@ div.container div#container-pokedex div#pokedex div#pokedex-left div#container-b
     flex-direction: column;
     align-items: center;
     width: 25%;
-    height: 70%;
+    height: 75%;
 
 }
 
@@ -244,10 +363,12 @@ div.container div#container-pokedex div#pokedex div#pokedex-left div#container-b
     height: 100%;
     border-radius: 2px;
     border: 1px solid rgba(0, 0, 0, .7);
+    transition: all 0.1s;
+    cursor: pointer
 
 }
 
-div.container div#container-pokedex div#pokedex div#pokedex-left div#container-bottom-left div#container-botoes-controller  div#botao-controller-meio {
+div.container div#container-pokedex div#pokedex div#pokedex-left div#container-bottom-left div#container-botoes-controller  div#container-botao-controller-meio {
 
     display: flex;
     width: 100%;
@@ -257,23 +378,26 @@ div.container div#container-pokedex div#pokedex div#pokedex-left div#container-b
 
 }
 
-div.container div#container-pokedex div#pokedex div#pokedex-left div#container-bottom-left div#container-botoes-controller  div#botao-controller-meio div#botao-controller-meio1 {
+div.container div#container-pokedex div#pokedex div#pokedex-left div#container-bottom-left div#container-botoes-controller  div#container-botao-controller-meio div#botao-controller-meio {
 
     background-color:#222222;
     border: 1px solid rgba(0, 0, 0, .7);
     border-radius: 2px;
     width: 50%;
     margin: 1%;
+    transition: all 0.1s;
 
 }
 
-div.container div#container-pokedex div#pokedex div#pokedex-left div#container-bottom-left div#container-botoes-controller div#botao-controller-meio div#botao-controller-meio2 {
+div.container div#container-pokedex div#pokedex div#pokedex-left div#container-bottom-left div#container-botoes-controller div#botao-controller:hover {
 
-    background-color:#222222;
-    border: 1px solid rgba(0, 0, 0, .7);
-    border-radius: 2px;
-    width: 50%;
-    margin: 1%;
+    transform: scale(0.9);
+
+}
+
+div.container div#container-pokedex div#pokedex div#pokedex-left div#container-bottom-left div#container-botoes-controller div#botao-controller-meio:hover {
+
+    transform: scale(0.9);
 
 }
 
@@ -312,8 +436,7 @@ div.container div#pokemon-list div#pokemon-card {
     background-size: auto;
     background-position: center center;*/
 
-    background-color: #146BA0;
-    
+    background-color: #49B8FA;
     max-width: 100px;
     flex: 1 1 100px;
     height: 120px;
@@ -330,8 +453,7 @@ div.container div#pokemon-list div#pokemon-card:hover {
 
    transform: scale(1.1);
    /*border: 3px solid rgba(0, 0, 0, .7);*/
-   background-color: #1d95df;
-
+   background-color: #146BA0;
 }
 
 div.container div#pokemon-list div#pokemon-card img#pokemon-img {
