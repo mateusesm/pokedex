@@ -307,7 +307,7 @@ div.container div#container-pokedex div#pokedex div#pokedex-left div#container-b
     align-items: center;
     border: 1px solid rgba(0, 0, 0, .7);
     border-radius: 20px;
-    color: #dddddd;
+    color: #dedede;
     background-color: #7A0000;
     transition: all 0.1s;
     cursor: pointer;
@@ -443,7 +443,7 @@ div.container div#pokemon-list div#pokemon-card {
     transition: transform 0.5s;
     cursor: pointer;
     border-radius: 3px;
-    border: 5px solid #dddddd;
+    border: 5px solid #dedede;
 
 }
 
