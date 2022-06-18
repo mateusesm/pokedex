@@ -228,10 +228,10 @@ div.container div#container-pokedex div#pokedex div#pokedex-left div#border-viso
     width: 90%;
     height: 90%;
 
-    background-image: url("../images/forest-visor.png");
+    background-image: url("../images/background-pokemon-gba-visor.jpeg");
     background-repeat: no-repeat;
     background-size: auto;
-    background-position: center center;
+    background-position: bottom center;
 
     /*background-color: #49B8FA;*/
     /*background-color: #1d95df;*/
@@ -427,7 +427,7 @@ div.container div#pokemon-list {
 
 div.container div#pokemon-list div#pokemon-card {
 
-    background-image: url("../images/background-pokemon-gba3.jpeg");
+    background-image: url("../images/background-pokemon-gba-cards.jpeg");
     background-repeat: no-repeat;
     background-size: auto;
     background-position: center center;
