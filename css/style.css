@@ -32,13 +32,11 @@ div.container {
     width: 100vw;
     height: 100vh;
 
-    background-image: url("../images/forest.png");
+    background-image: url("../images/background-pokemon-gba.png");
     background-repeat: no-repeat;
-    background-size: auto;
+    background-size: cover;
     background-position: center center;
     background-attachment: fixed;
-
-    background-color: #49B8FA;
 
 }
 
@@ -429,12 +427,11 @@ div.container div#pokemon-list {
 
 div.container div#pokemon-list div#pokemon-card {
 
-    /*background-image: url("../images/pokebola-neon.jpeg");
+    background-image: url("../images/background-pokemon-gba3.jpeg");
     background-repeat: no-repeat;
     background-size: auto;
-    background-position: center center;*/
+    background-position: center center;
 
-    background-color: #49B8FA;
     max-width: 100px;
     flex: 1 1 100px;
     height: 120px;
@@ -449,7 +446,7 @@ div.container div#pokemon-list div#pokemon-card {
 
 div.container div#pokemon-list div#pokemon-card:hover {
 
-   transform: scale(1.1);
+   transform: scale(1.2);
    /*border: 3px solid rgba(0, 0, 0, .7);*/
    background-color: #146BA0;
 }
