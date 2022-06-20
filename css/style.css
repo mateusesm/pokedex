@@ -32,7 +32,7 @@ div.container {
     width: 100vw;
     height: 100vh;
 
-    background-image: url("../images/background-pokemon-gba.png");
+    background-image: url("../images/forest.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -227,14 +227,10 @@ div.container div#container-pokedex div#pokedex div#pokedex-left div#border-viso
 
     width: 90%;
     height: 90%;
-
-    background-image: url("../images/background-pokemon-gba-visor.jpeg");
+    background-image: url("../images/forest-visor.png");
     background-repeat: no-repeat;
-    background-size: auto;
-    background-position: bottom center;
-
-    /*background-color: #49B8FA;*/
-    /*background-color: #1d95df;*/
+    background-size: cover;
+    background-position: center center;
     border: 1px solid rgba(0, 0, 0, .7);
     border-radius: 5px;
 
@@ -400,6 +396,10 @@ div.container div#container-pokedex div#pokedex div#pokedex-left div#container-b
 
 div.container div#container-pokedex div#pokedex div#pokedex-right {
 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
     width: 47%;
     height: 82%;
     margin-top: auto;
@@ -408,6 +408,60 @@ div.container div#container-pokedex div#pokedex div#pokedex-right {
     border-left: 15px solid rgba(0, 0, 0, .3);
     border-radius: 8px;
     box-shadow: 7px 7px 10px #000000;
+
+}
+
+div.container div#container-pokedex div#pokedex div#pokedex-right div#container-second-visor {
+
+    display: flex;
+    width: 90%;
+    height: 40%;
+
+}
+
+div.container div#container-pokedex div#pokedex div#pokedex-right div#container-second-visor div#second-visor {
+
+    background-color: #000000;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, .7);
+
+}
+
+div.container div#container-pokedex div#pokedex div#pokedex-right div#container-blue-buttons {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 5px;
+
+    width: 90%;
+    height: 15%;
+    margin-top: -15%;
+    padding: 1%;
+
+}
+
+div.container div#container-pokedex div#pokedex div#pokedex-right div#container-blue-buttons div#blue-button {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #dedede;
+    background-color: #146BA0;
+    height: 30px;
+    border: 1px solid rgba(0, 0, 0, .7);
+    border-radius: 2px;
+    transition: transform 0.1s;
+    cursor: pointer;
+
+}
+
+div.container div#container-pokedex div#pokedex div#pokedex-right div#container-blue-buttons div#blue-button:hover {
+
+  transform: scale(0.9);
 
 }
 
@@ -427,9 +481,9 @@ div.container div#pokemon-list {
 
 div.container div#pokemon-list div#pokemon-card {
 
-    background-image: url("../images/background-pokemon-gba-cards.jpeg");
+    background-image: url("../images/background-blue-pokeball.jpg");
     background-repeat: no-repeat;
-    background-size: auto;
+    background-size: cover;
     background-position: center center;
 
     max-width: 100px;
@@ -447,8 +501,7 @@ div.container div#pokemon-list div#pokemon-card {
 div.container div#pokemon-list div#pokemon-card:hover {
 
    transform: scale(1.2);
-   /*border: 3px solid rgba(0, 0, 0, .7);*/
-   background-color: #146BA0;
+
 }
 
 div.container div#pokemon-list div#pokemon-card img#pokemon-img {
