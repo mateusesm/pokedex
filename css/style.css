@@ -275,7 +275,7 @@ div.container div#pokedex-container div#pokedex div#left-pokedex div#left-bottom
     border-radius: 100%;
     border: 1px solid rgba(0, 0, 0, .7);
     background-color: #222222;
-    transition: all 0.1s;
+    transition: transform 0.1s;
     cursor: pointer; 
 
 }
@@ -309,7 +309,7 @@ div.container div#pokedex-container div#pokedex div#left-pokedex div#left-bottom
     border-radius: 20px;
     color: #dedede;
     background-color: #7A0000;
-    transition: all 0.1s;
+    transition: transform 0.1s;
     cursor: pointer;
 
 }
@@ -350,7 +350,7 @@ div.container div#pokedex-container div#pokedex div#left-pokedex div#left-bottom
     height: 100%;
     border-radius: 5px;
     border: 1px solid rgba(0, 0, 0, .7);
-    transition: all 0.1s;
+    transition: transform 0.1s;
     cursor: pointer
 
 }
@@ -372,7 +372,7 @@ div.container div#pokedex-container div#pokedex div#left-pokedex div#left-bottom
     border-radius: 5px;
     width: 50%;
     margin: 1%;
-    transition: all 0.1s;
+    transition: transform 0.1s;
 
 }
 
