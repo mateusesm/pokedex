@@ -280,12 +280,6 @@ div.container div#pokedex-container div#pokedex div#left-pokedex div#left-bottom
 
 }
 
-/*div.container div#pokedex-container div#pokedex div#left-pokedex div#left-bottom-container div#circle-button-container div#circle-button:hover {
-
-    transform: scale(0.9);
-
-}*/
-
 div.container div#pokedex-container div#pokedex div#left-pokedex div#left-bottom-container div#name-and-buttons-container {
 
     display: flex;
@@ -326,12 +320,6 @@ div.container div#pokedex-container div#pokedex div#left-pokedex div#left-bottom
     background-color: #146BA0;
 
 }
-
-/*div.container div#pokedex-container div#pokedex div#left-pokedex div#left-bottom-container div#name-and-buttons-container div#on-off-buttons-container > div:hover {
-
-    transform: scale(0.9);
-
-}*/
 
 div.container div#pokedex-container div#pokedex div#left-pokedex div#left-bottom-container div#name-and-buttons-container div#pokemon-name-display {
 
@@ -387,18 +375,6 @@ div.container div#pokedex-container div#pokedex div#left-pokedex div#left-bottom
     transition: all 0.1s;
 
 }
-
-/*div.container div#pokedex-container div#pokedex div#left-pokedex div#left-bottom-container div#controller-buttons-container  > div:hover {
-
-    transform: scale(0.9);
-
-}*/
-
-/*div.container div#pokedex-container div#pokedex div#left-pokedex div#left-bottom-container div#controller-buttons-container div#controller-middle-buttons-container > div:hover {
-
-    transform: scale(0.9);
-
-}*/
 
 div.container div#pokedex-container div#pokedex div#right-pokedex {
 
@@ -478,12 +454,6 @@ div.container div#pokedex-container div#pokedex div#right-pokedex div#blue-butto
 
 }
 
-/*div.container div#pokedex-container div#pokedex div#right-pokedex div#blue-buttons-container > div:hover {
-
-  transform: scale(0.9);
-
-}*/
-
 div.container div#pokedex-container div#pokedex div#right-pokedex div#small-buttons-container {
 
     display: flex;
@@ -506,12 +476,6 @@ div.container div#pokedex-container div#pokedex div#right-pokedex div#small-butt
     cursor: pointer;
 
 }
-
-/*div.container div#pokedex-container div#pokedex div#right-pokedex div#small-buttons-container > div:hover {
-
-    transform: scale(0.9);
-
-}*/
 
 div.container div#pokedex-container div#pokedex div#right-pokedex div#white-buttons-and-yellow-led-container {
 
@@ -542,12 +506,6 @@ div.container div#pokedex-container div#pokedex div#right-pokedex div#white-butt
     cursor: pointer;
 
 }
-
-/*div.container div#pokedex-container div#pokedex div#right-pokedex div#white-buttons-and-yellow-led-container div#white-buttons-container > div:hover {
-
-    transform: scale(0.9);
-
-}*/
 
 div.container div#pokedex-container div#pokedex div#right-pokedex div#white-buttons-and-yellow-led-container div#yellow-led-container {
 
@@ -589,12 +547,6 @@ div.container div#pokedex-container div#pokedex div#right-pokedex div#two-gray-b
     cursor: pointer;
 
 }
-
-/*div.container div#pokedex-container div#pokedex div#right-pokedex div#two-gray-buttons-container > div:hover {
-
-    transform: scale(0.9);
-
-}*/
 
 div.container div#pokemon-list {
    
