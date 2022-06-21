@@ -85,3 +85,23 @@ habilidades
 1 atack especial
 
 */
+
+function holdTightButton(id) {
+
+    const button = document.querySelector(`#${id}`)
+
+    let scale = 0.9
+
+    button.style.transform = `scale(${scale})`
+
+}
+
+function dropButton(id) {
+
+    const button = document.querySelector(`#${id}`)
+
+    let scale = 1.0
+
+    button.style.transform = `scale(${scale})`
+
+}

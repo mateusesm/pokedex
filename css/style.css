@@ -268,11 +268,11 @@ div.container div#pokedex-container div#pokedex div#left-pokedex div#left-bottom
 
 }
 
-div.container div#pokedex-container div#pokedex div#left-pokedex div#left-bottom-container div#circle-button-container div#circle-button:hover {
+/*div.container div#pokedex-container div#pokedex div#left-pokedex div#left-bottom-container div#circle-button-container div#circle-button:hover {
 
     transform: scale(0.9);
 
-}
+}*/
 
 div.container div#pokedex-container div#pokedex div#left-pokedex div#left-bottom-container div#name-and-buttons-container {
 
@@ -315,11 +315,11 @@ div.container div#pokedex-container div#pokedex div#left-pokedex div#left-bottom
 
 }
 
-div.container div#pokedex-container div#pokedex div#left-pokedex div#left-bottom-container div#name-and-buttons-container div#on-off-buttons-container > div:hover {
+/*div.container div#pokedex-container div#pokedex div#left-pokedex div#left-bottom-container div#name-and-buttons-container div#on-off-buttons-container > div:hover {
 
     transform: scale(0.9);
 
-}
+}*/
 
 div.container div#pokedex-container div#pokedex div#left-pokedex div#left-bottom-container div#name-and-buttons-container div#pokemon-name-display {
 
@@ -365,7 +365,7 @@ div.container div#pokedex-container div#pokedex div#left-pokedex div#left-bottom
 
 }
 
-div.container div#pokedex-container div#pokedex div#left-pokedex div#left-bottom-container div#controller-buttons-container  div#controller-middle-buttons-container div#controller-middle-button {
+div.container div#pokedex-container div#pokedex div#left-pokedex div#left-bottom-container div#controller-buttons-container  div#controller-middle-buttons-container > div {
 
     background-color:#222222;
     border: 1px solid rgba(0, 0, 0, .7);
@@ -376,17 +376,17 @@ div.container div#pokedex-container div#pokedex div#left-pokedex div#left-bottom
 
 }
 
-div.container div#pokedex-container div#pokedex div#left-pokedex div#left-bottom-container div#controller-buttons-container  div#controller-button:hover {
+/*div.container div#pokedex-container div#pokedex div#left-pokedex div#left-bottom-container div#controller-buttons-container  > div:hover {
 
     transform: scale(0.9);
 
-}
+}*/
 
-div.container div#pokedex-container div#pokedex div#left-pokedex div#left-bottom-container div#controller-buttons-container  div#controller-middle-button:hover {
+/*div.container div#pokedex-container div#pokedex div#left-pokedex div#left-bottom-container div#controller-buttons-container div#controller-middle-buttons-container > div:hover {
 
     transform: scale(0.9);
 
-}
+}*/
 
 div.container div#pokedex-container div#pokedex div#right-pokedex {
 
@@ -451,7 +451,7 @@ div.container div#pokedex-container div#pokedex div#right-pokedex div#blue-butto
 
 }
 
-div.container div#pokedex-container div#pokedex div#right-pokedex div#blue-buttons-container div#blue-button {
+div.container div#pokedex-container div#pokedex div#right-pokedex div#blue-buttons-container > div {
 
     display: flex;
     justify-content: center;
@@ -466,11 +466,11 @@ div.container div#pokedex-container div#pokedex div#right-pokedex div#blue-butto
 
 }
 
-div.container div#pokedex-container div#pokedex div#right-pokedex div#blue-buttons-container div#blue-button:hover {
+/*div.container div#pokedex-container div#pokedex div#right-pokedex div#blue-buttons-container > div:hover {
 
   transform: scale(0.9);
 
-}
+}*/
 
 div.container div#pokedex-container div#pokedex div#right-pokedex div#small-buttons-container {
 
@@ -482,7 +482,7 @@ div.container div#pokedex-container div#pokedex div#right-pokedex div#small-butt
 
 }
 
-div.container div#pokedex-container div#pokedex div#right-pokedex div#small-buttons-container div#small-button {
+div.container div#pokedex-container div#pokedex div#right-pokedex div#small-buttons-container > div {
 
     width: 20%;
     height: 60%;
@@ -495,11 +495,11 @@ div.container div#pokedex-container div#pokedex div#right-pokedex div#small-butt
 
 }
 
-div.container div#pokedex-container div#pokedex div#right-pokedex div#small-buttons-container div#small-button:hover {
+/*div.container div#pokedex-container div#pokedex div#right-pokedex div#small-buttons-container > div:hover {
 
     transform: scale(0.9);
 
-}
+}*/
 
 div.container div#pokedex-container div#pokedex div#right-pokedex div#white-buttons-and-yellow-led-container {
 
@@ -518,7 +518,7 @@ div.container div#pokedex-container div#pokedex div#right-pokedex div#white-butt
 
 }
 
-div.container div#pokedex-container div#pokedex div#right-pokedex div#white-buttons-and-yellow-led-container div#white-buttons-container div#white-button {
+div.container div#pokedex-container div#pokedex div#right-pokedex div#white-buttons-and-yellow-led-container div#white-buttons-container > div {
 
     background-color: #dedede;
     width: 100%;
@@ -531,11 +531,11 @@ div.container div#pokedex-container div#pokedex div#right-pokedex div#white-butt
 
 }
 
-div.container div#pokedex-container div#pokedex div#right-pokedex div#white-buttons-and-yellow-led-container div#white-buttons-container div#white-button:hover {
+/*div.container div#pokedex-container div#pokedex div#right-pokedex div#white-buttons-and-yellow-led-container div#white-buttons-container > div:hover {
 
     transform: scale(0.9);
 
-}
+}*/
 
 div.container div#pokedex-container div#pokedex div#right-pokedex div#white-buttons-and-yellow-led-container div#yellow-led-container {
 
@@ -566,7 +566,7 @@ div.container div#pokedex-container div#pokedex div#right-pokedex div#two-gray-b
 
 }
 
-div.container div#pokedex-container div#pokedex div#right-pokedex div#two-gray-buttons-container div#gray-button {
+div.container div#pokedex-container div#pokedex div#right-pokedex div#two-gray-buttons-container > div {
 
     width: 40%;
     height: 60%;
@@ -578,11 +578,11 @@ div.container div#pokedex-container div#pokedex div#right-pokedex div#two-gray-b
 
 }
 
-div.container div#pokedex-container div#pokedex div#right-pokedex div#two-gray-buttons-container div#gray-button:hover {
+/*div.container div#pokedex-container div#pokedex div#right-pokedex div#two-gray-buttons-container > div:hover {
 
     transform: scale(0.9);
 
-}
+}*/
 
 div.container div#pokemon-list {
    
