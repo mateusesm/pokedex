@@ -105,3 +105,25 @@ function dropButton(id) {
     button.style.transform = `scale(${scale})`
 
 }
+
+const onButton = document.querySelector('#on-button')
+
+const offButton = document.querySelector('#off-button')
+
+const pokedexDisplay = document.querySelector('#pokedex-display')
+    
+onButton.addEventListener('mousedown', () => {
+
+    pokedexDisplay.classList.remove('pokedex-display-off')
+
+    pokedexDisplay.classList.add('pokedex-display-on')
+
+})
+
+offButton.addEventListener('mousedown', () => {
+
+    pokedexDisplay.classList.remove('pokedex-display-on')
+
+    pokedexDisplay.classList.add('pokedex-display-off')
+
+})

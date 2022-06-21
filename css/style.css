@@ -184,7 +184,7 @@ div.container div#pokedex-container div#pokedex div#left-pokedex div#display-bor
 
 }
 
-div.container div#pokedex-container div#pokedex div#left-pokedex div#display-border div#pokedex-display {
+div.container div#pokedex-container div#pokedex div#left-pokedex div#display-border div.pokedex-display-on {
 
     width: 90%;
     height: 90%;
@@ -194,6 +194,18 @@ div.container div#pokedex-container div#pokedex div#left-pokedex div#display-bor
     background-position: center center;
     border: 1px solid rgba(0, 0, 0, .7);
     border-radius: 5px;
+    transition: 0.5s;
+
+}
+
+div.container div#pokedex-container div#pokedex div#left-pokedex div#display-border div.pokedex-display-off {
+
+    width: 90%;
+    height: 90%;
+    background-color: #000000;
+    border: 1px solid rgba(0, 0, 0, .7);
+    border-radius: 5px;
+    transition: 0.5s;
 
 }
 
