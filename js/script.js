@@ -52,7 +52,9 @@ async function getPokemons() {
 
         let divPokemonCard = document.createElement('div')
 
-        divPokemonCard.setAttribute('id', 'pokemon-card')
+        divPokemonCard.setAttribute('class', 'pokemon-card')
+
+        divPokemonCard.setAttribute('id', `poke-card-${num}`)
 
         let urlPokemonImage = (arrayPokemons[num][6])
 
@@ -86,17 +88,42 @@ habilidades
 
 */
 
+const pokedexDisplay = document.querySelector('#pokedex-display')
+
 function holdTightButton(id) {
 
     const button = document.querySelector(`#${id}`)
 
     let scale = 0.9
 
-    button.style.transform = `scale(${scale})`
-
     let soundButton = new Audio('sounds/sound-button.wav')
 
+    let soundOnButton = new Audio('sounds/sound-on.wav')
+
+    let soundOffButton = new Audio('sounds/sound-off.wav')
+
     soundButton.play()
+
+    button.style.transform = `scale(${scale})`
+
+    if ((id == 'on-button') && (pokedexDisplay.className == 'pokedex-display-off')) {
+
+        soundOnButton.play()
+            
+        pokedexDisplay.classList.remove('pokedex-display-off')
+    
+        pokedexDisplay.classList.add('pokedex-display-on')
+    
+
+    } else if ((id == 'off-button') && (pokedexDisplay.className == 'pokedex-display-on'))  {
+
+        soundOffButton.play()
+    
+        pokedexDisplay.classList.remove('pokedex-display-on')
+    
+        pokedexDisplay.classList.add('pokedex-display-off')    
+
+    }
 
 }
 
@@ -109,52 +136,3 @@ function dropButton(id) {
     button.style.transform = `scale(${scale})`
 
 }
-
-const onButton = document.querySelector('#on-button')
-
-const offButton = document.querySelector('#off-button')
-
-const pokedexDisplay = document.querySelector('#pokedex-display')
-
-const divPokemonCard = document.querySelector('#pokemon-card')
-
-    
-onButton.addEventListener('mousedown', () => {
-
-    if (pokedexDisplay.className == 'pokedex-display-off') {
-
-        let soundButton = new Audio('sounds/sound-on.wav')
-
-        soundButton.play()
-        
-        pokedexDisplay.classList.remove('pokedex-display-off')
-
-        pokedexDisplay.classList.add('pokedex-display-on')
-
-    }
-
-})
-
-offButton.addEventListener('mousedown', () => {
-
-    if (pokedexDisplay.className == 'pokedex-display-on') {
-
-        let soundButton = new Audio('sounds/sound-off.wav')
-
-        soundButton.play()
-
-        pokedexDisplay.classList.remove('pokedex-display-on')
-
-        pokedexDisplay.classList.add('pokedex-display-off')
-
-    }
-
-})
-
-const soundCard = new Audio('sounds/sound-cards-transition2.wav')
-
-divPokemonCard.addEventListener('mouseover', () => {
-
-    soundCard.play()
-
-})

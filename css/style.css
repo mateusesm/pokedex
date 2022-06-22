@@ -562,7 +562,7 @@ div.container div#pokemon-list {
 
 }
 
-div.container div#pokemon-list div#pokemon-card {
+div.container div#pokemon-list div.pokemon-card {
 
     background-image: url("../images/background-blue-pokeball.jpg");
     background-repeat: no-repeat;
@@ -581,13 +581,13 @@ div.container div#pokemon-list div#pokemon-card {
 
 }
 
-div.container div#pokemon-list div#pokemon-card:hover {
+div.container div#pokemon-list div.pokemon-card:hover {
 
    transform: scale(1.2);
 
 }
 
-div.container div#pokemon-list div#pokemon-card img#pokemon-img {
+div.container div#pokemon-list div.pokemon-card img#pokemon-img {
 
     display: block;
     max-width: 100%;
