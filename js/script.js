@@ -68,6 +68,25 @@ async function getPokemons() {
 
         divPokemonCard.appendChild(pokemonImg)
 
+
+        divPokemonCard.addEventListener('click', (divPokemonCard) => {
+
+            if (pokedexDisplay.className == 'pokedex-display-on') {
+
+                let urlPokemonImage = divPokemonCard.path[0].currentSrc
+
+                let pokemonImg = document.createElement('img')
+
+                pokemonImg.setAttribute('src', urlPokemonImage)
+
+                pokemonImg.setAttribute('id', 'pokemon-img')
+
+                pokedexDisplay.appendChild(pokemonImg)
+                
+            }
+
+        })
+
     }
 
 }

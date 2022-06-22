@@ -186,6 +186,8 @@ div.container div#pokedex-container div#pokedex div#left-pokedex div#display-bor
 
 div.container div#pokedex-container div#pokedex div#left-pokedex div#display-border div.pokedex-display-on {
 
+    display: flex;
+    justify-content: center;
     width: 90%;
     height: 90%;
     background-image: url("../images/forest-visor.png");
@@ -195,6 +197,13 @@ div.container div#pokedex-container div#pokedex div#left-pokedex div#display-bor
     border: 1px solid rgba(0, 0, 0, .7);
     border-radius: 5px;
     transition: 0.5s;
+
+}
+
+div.container div#pokedex-container div#pokedex div#left-pokedex div#display-border div.pokedex-display-on > img#pokemon-img {
+
+   display: block;
+   max-width: 70%;
 
 }
 
