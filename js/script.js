@@ -62,16 +62,19 @@ async function getPokemons() {
     
         pokemonImg.setAttribute('src', urlPokemonImage)
 
-        pokemonImg.setAttribute('id', 'pokemon-img')
+        pokemonImg.setAttribute('id', 'pokemon-card-img')
     
         divPokemonList.appendChild(divPokemonCard)
 
         divPokemonCard.appendChild(pokemonImg)
 
-
         divPokemonCard.addEventListener('click', (divPokemonCard) => {
 
             if (pokedexDisplay.className == 'pokedex-display-on') {
+
+                let soundPokemonDisplay = new Audio('sounds/sound-pokemon-display.wav')
+
+                soundPokemonDisplay.volume -= 0.5
 
                 let urlPokemonImage = divPokemonCard.path[0].currentSrc
 
@@ -79,10 +82,30 @@ async function getPokemons() {
 
                 pokemonImg.setAttribute('src', urlPokemonImage)
 
-                pokemonImg.setAttribute('id', 'pokemon-img')
+                pokemonImg.setAttribute('id', 'pokemon-display-img')
 
-                pokedexDisplay.appendChild(pokemonImg)
-                
+                if (!document.querySelector('#pokemon-display-img')) {
+
+                    soundPokemonDisplay.play()
+
+                    pokedexDisplay.appendChild(pokemonImg)
+
+                } else {
+
+                    let removePokemonImg = document.querySelector('#pokemon-display-img')
+
+                    pokedexDisplay.removeChild(removePokemonImg)
+
+                    soundPokemonDisplay.play()
+
+                    pokedexDisplay.appendChild(pokemonImg)
+
+                }
+                    
+            } else if (pokedexDisplay.className == 'pokedex-display-off') {
+
+                alert('Ligue a pokédex para analisar um pokémon.')
+
             }
 
         })
@@ -140,7 +163,15 @@ function holdTightButton(id) {
     
         pokedexDisplay.classList.remove('pokedex-display-on')
     
-        pokedexDisplay.classList.add('pokedex-display-off')    
+        pokedexDisplay.classList.add('pokedex-display-off')
+
+        if (document.querySelector('#pokemon-display-img')) {
+
+            let pokemonImg = document.querySelector('#pokemon-display-img')
+
+            pokedexDisplay.removeChild(pokemonImg)
+
+        }
 
     }
 

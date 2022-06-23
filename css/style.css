@@ -200,11 +200,11 @@ div.container div#pokedex-container div#pokedex div#left-pokedex div#display-bor
 
 }
 
-div.container div#pokedex-container div#pokedex div#left-pokedex div#display-border div.pokedex-display-on > img#pokemon-img {
+div.container div#pokedex-container div#pokedex div#left-pokedex div#display-border div.pokedex-display-on > img#pokemon-display-img {
 
    display: block;
    max-width: 70%;
-
+   
 }
 
 div.container div#pokedex-container div#pokedex div#left-pokedex div#display-border div.pokedex-display-off {
@@ -549,6 +549,7 @@ div.container div#pokedex-container div#pokedex div#right-pokedex div#two-gray-b
 
     width: 40%;
     height: 60%;
+    display: flex;
     background-color: #222222;
     border-radius: 5px;
     border: 1px solid rgba(0, 0, 0, .7);
@@ -596,7 +597,7 @@ div.container div#pokemon-list div.pokemon-card:hover {
 
 }
 
-div.container div#pokemon-list div.pokemon-card img#pokemon-img {
+div.container div#pokemon-list div.pokemon-card img#pokemon-card-img {
 
     display: block;
     max-width: 100%;
