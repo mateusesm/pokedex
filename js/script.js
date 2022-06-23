@@ -132,6 +132,8 @@ habilidades
 
 const pokedexDisplay = document.querySelector('#pokedex-display')
 
+const pokedexSecondDisplay = document.querySelector('#second-display')
+
 function holdTightButton(id) {
 
     const button = document.querySelector(`#${id}`)
@@ -148,22 +150,30 @@ function holdTightButton(id) {
 
     button.style.transform = `scale(${scale})`
 
-    if ((id == 'on-button') && (pokedexDisplay.className == 'pokedex-display-off')) {
+    if ((id == 'on-button') && (pokedexDisplay.className == 'pokedex-display-off') && (pokedexSecondDisplay.className == 'second-display-off')) {
 
         soundOnButton.play()
             
         pokedexDisplay.classList.remove('pokedex-display-off')
+
+        pokedexSecondDisplay.classList.remove('second-display-off')
     
         pokedexDisplay.classList.add('pokedex-display-on')
+
+        pokedexSecondDisplay.classList.add('second-display-on')
     
 
-    } else if ((id == 'off-button') && (pokedexDisplay.className == 'pokedex-display-on'))  {
+    } else if ((id == 'off-button') && (pokedexDisplay.className == 'pokedex-display-on') && (pokedexSecondDisplay.className == 'second-display-on'))  {
 
         soundOffButton.play()
     
         pokedexDisplay.classList.remove('pokedex-display-on')
+
+        pokedexSecondDisplay.classList.remove('second-display-on')
     
         pokedexDisplay.classList.add('pokedex-display-off')
+
+        pokedexSecondDisplay.classList.add('second-display-off')
 
         if (document.querySelector('#pokemon-display-img')) {
 
