@@ -8,6 +8,10 @@ function holdTightButton(id) {
 
     let scale = 0.9
 
+    let blueLed = document.querySelector('#blue-led')
+
+    let greenLed = document.querySelector('#green-led')
+
     let soundButton = new Audio('sounds/sound-button.wav')
 
     let soundOnButton = new Audio('sounds/sound-on.wav')
@@ -20,6 +24,8 @@ function holdTightButton(id) {
 
     if ((id == 'on-button') && (pokedexDisplay.className == 'pokedex-display-off') && (pokedexSecondDisplay.className == 'second-display-off')) {
 
+        greenLed.style.backgroundColor = '#7BD434'
+
         soundOnButton.play()
             
         pokedexDisplay.classList.remove('pokedex-display-off')
@@ -29,9 +35,14 @@ function holdTightButton(id) {
         pokedexDisplay.classList.add('pokedex-display-on')
 
         pokedexSecondDisplay.classList.add('second-display-on')
-    
 
-    } else if ((id == 'off-button') && (pokedexDisplay.className == 'pokedex-display-on') && (pokedexSecondDisplay.className == 'second-display-on'))  {
+        pokedexSecondDisplay.innerHTML = '<p>Olá! Sou a Pokédex da região de Kanto, escolha qualquer pokémon pelas cartas ao lado ou digitando seu número, e te mostrarei seus principais dados!</p>'
+    
+    } else if ((id == 'off-button') && (pokedexDisplay.className == 'pokedex-display-on') && (pokedexSecondDisplay.className == 'second-display-on')) {
+
+        greenLed.style.backgroundColor = '#36693E'
+
+        blueLed.style.backgroundColor = '#146BA0'
 
         soundOffButton.play()
     
@@ -48,6 +59,8 @@ function holdTightButton(id) {
             let pokemonImg = document.querySelector('#pokemon-display-img')
 
             pokedexDisplay.removeChild(pokemonImg)
+
+            pokedexSecondDisplay.innerHTML = ''
 
         }
 
@@ -135,23 +148,27 @@ async function getPokemons() {
 
         divPokemonCard.appendChild(pokemonImg)
 
-        divPokemonCard.addEventListener('click', (divPokemonCard) => {
+        divPokemonCard.addEventListener('click', () => {
 
             if (pokedexDisplay.className == 'pokedex-display-on') {
 
+                let idPokemon = divPokemonCard.id
+
                 let soundPokemonDisplay = new Audio('sounds/sound-pokemon-display.wav')
 
-                soundPokemonDisplay.volume -= 0.5
-
-                let idPokemon = divPokemonCard.path[1].id
+                let blueLed = document.querySelector('#blue-led')
 
                 let urlPokemonImage = arrayPokemons[idPokemon][6]
 
                 let pokemonImg = document.createElement('img')
 
+                soundPokemonDisplay.volume -= 0.5
+
                 pokemonImg.setAttribute('src', urlPokemonImage)
 
                 pokemonImg.setAttribute('id', 'pokemon-display-img')
+
+                blueLed.style.backgroundColor = '#49B8FA'
 
                 if (!document.querySelector('#pokemon-display-img')) {
 
@@ -175,7 +192,11 @@ async function getPokemons() {
 
                     }
 
-                    if (arrayPokemons[idPokemon][3].length == 2) {
+                    if (arrayPokemons[idPokemon][3].length == 3) {
+
+                        pokedexSecondDisplay.innerHTML += `<p>Abilidades: ${arrayPokemons[idPokemon][3][0].ability.name} & ${arrayPokemons[idPokemon][3][1].ability.name} & ${arrayPokemons[idPokemon][3][2].ability.name} </p>`
+
+                    } else if (arrayPokemons[idPokemon][3].length == 2) {
 
                         pokedexSecondDisplay.innerHTML += `<p>Abilidades: ${arrayPokemons[idPokemon][3][0].ability.name} & ${arrayPokemons[idPokemon][3][1].ability.name} </p>`
 
@@ -215,7 +236,11 @@ async function getPokemons() {
 
                     }
 
-                    if (arrayPokemons[idPokemon][3].length == 2) {
+                    if (arrayPokemons[idPokemon][3].length == 3) {
+
+                        pokedexSecondDisplay.innerHTML += `<p>Abilidades: ${arrayPokemons[idPokemon][3][0].ability.name} & ${arrayPokemons[idPokemon][3][1].ability.name} & ${arrayPokemons[idPokemon][3][2].ability.name} </p>`
+
+                    } else if (arrayPokemons[idPokemon][3].length == 2) {
 
                         pokedexSecondDisplay.innerHTML += `<p>Abilidades: ${arrayPokemons[idPokemon][3][0].ability.name} & ${arrayPokemons[idPokemon][3][1].ability.name} </p>`
 

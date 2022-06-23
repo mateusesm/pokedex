@@ -420,6 +420,7 @@ div.container div#pokedex-container div#pokedex div#right-pokedex div#second-dis
     padding: 2%;
     background-color: #000000;
     text-align: left;
+    overflow-y: auto;
     transition: 0.5s;
 
 }
@@ -434,12 +435,11 @@ div.container div#pokedex-container div#pokedex div#right-pokedex div#second-dis
 
     position: relative;
     font-family: 'VT323', monospace;
-    font-size: 2.6rem;
+    font-size: 2.5rem;
     text-align: left;
     color: #dedede;
-    margin: 1.5%;
+    margin: 1%;
     opacity: 1;
-
 }
 
 div.container div#pokedex-container div#pokedex div#right-pokedex div#blue-buttons-container {
@@ -484,7 +484,7 @@ div.container div#pokedex-container div#pokedex div#right-pokedex div#small-butt
 div.container div#pokedex-container div#pokedex div#right-pokedex div#small-buttons-container > div {
 
     width: 20%;
-    height: 60%;
+    height: 90%;
     border-radius: 8px;
     border: 1px solid rgba(0, 0, 0, .7);
     background-color: #222222;
@@ -498,8 +498,10 @@ div.container div#pokedex-container div#pokedex div#right-pokedex div#white-butt
 
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 90%;
     height: 8%;
+    margin-top: 1%;
 
 }
 
@@ -528,6 +530,7 @@ div.container div#pokedex-container div#pokedex div#right-pokedex div#white-butt
 
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     width: 20%;
     height: 100%;
 
