@@ -6,6 +6,8 @@ const onButton = document.querySelector('#on-button')
 
 const offButton = document.querySelector('#off-button')
 
+const blueNumberButtons = document.que
+
 
 let blueLed = document.querySelector('#blue-led')
 
@@ -86,7 +88,7 @@ function offPokedex() {
 
 function blueNumberButton() {
 
-    
+
 
 }
 
