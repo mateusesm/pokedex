@@ -84,6 +84,12 @@ function offPokedex() {
 
 }
 
+function blueNumberButton() {
+
+    
+
+}
+
 function holdTightButton(id) {
 
     const button = document.querySelector(`#${id}`)
