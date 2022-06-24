@@ -6,8 +6,13 @@ const onButton = document.querySelector('#on-button')
 
 const offButton = document.querySelector('#off-button')
 
-const blueNumberButtons = document.que
+const blueNumberButtons = document.querySelectorAll('.blue-number-button')
 
+for (let c = 0; c < blueNumberButtons.length; c++) {
+
+    blueNumberButtons[c].addEventListener('mousedown', numberButton)
+
+}
 
 let blueLed = document.querySelector('#blue-led')
 
@@ -86,9 +91,9 @@ function offPokedex() {
 
 }
 
-function blueNumberButton() {
+function numberButton() {
 
-
+    console.log('Deu certo')
 
 }
 
