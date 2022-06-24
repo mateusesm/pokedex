@@ -2,27 +2,27 @@ const pokedexDisplay = document.querySelector('#pokedex-display')
 
 const pokedexSecondDisplay = document.querySelector('#second-display')
 
-function holdTightButton(id) {
+const onButton = document.querySelector('#on-button')
 
-    const button = document.querySelector(`#${id}`)
+const offButton = document.querySelector('#off-button')
 
-    let scale = 0.9
 
-    let blueLed = document.querySelector('#blue-led')
+let blueLed = document.querySelector('#blue-led')
 
-    let greenLed = document.querySelector('#green-led')
+let greenLed = document.querySelector('#green-led')
 
-    let soundButton = new Audio('sounds/sound-button.wav')
+let soundOnButton = new Audio('sounds/sound-on.wav')
 
-    let soundOnButton = new Audio('sounds/sound-on.wav')
+let soundOffButton = new Audio('sounds/sound-off.wav')
 
-    let soundOffButton = new Audio('sounds/sound-off.wav')
 
-    soundButton.play()
+onButton.addEventListener('mousedown', onPokedex)
+offButton.addEventListener('mousedown', offPokedex)
 
-    button.style.transform = `scale(${scale})`
 
-    if ((id == 'on-button') && (pokedexDisplay.className == 'pokedex-display-off') && (pokedexSecondDisplay.className == 'second-display-off')) {
+function onPokedex() {
+
+    if ((pokedexDisplay.className == 'pokedex-display-off') && (pokedexSecondDisplay.className == 'second-display-off')) {
 
         greenLed.style.backgroundColor = '#7BD434'
 
@@ -37,8 +37,26 @@ function holdTightButton(id) {
         pokedexSecondDisplay.classList.add('second-display-on')
 
         pokedexSecondDisplay.innerHTML = '<p>Olá! Sou a Pokédex da região de Kanto, escolha qualquer pokémon pelas cartas ao lado ou digitando seu número, e te mostrarei seus principais dados!</p>'
-    
-    } else if ((id == 'off-button') && (pokedexDisplay.className == 'pokedex-display-on') && (pokedexSecondDisplay.className == 'second-display-on')) {
+
+        const inputPokemonNumber = document.createElement('input')
+
+        inputPokemonNumber.setAttribute('id', 'pokemon-number')
+
+        inputPokemonNumber.setAttribute('type', 'text')
+
+        inputPokemonNumber.setAttribute('size', '4')
+
+        inputPokemonNumber.setAttribute('maxlength', '4')
+
+        pokedexSecondDisplay.appendChild(inputPokemonNumber)
+
+    }
+
+}
+
+function offPokedex() {
+
+    if((pokedexDisplay.className == 'pokedex-display-on') && (pokedexSecondDisplay.className == 'second-display-on')) {
 
         greenLed.style.backgroundColor = '#36693E'
 
@@ -60,11 +78,23 @@ function holdTightButton(id) {
 
             pokedexDisplay.removeChild(pokemonImg)
 
-            pokedexSecondDisplay.innerHTML = ''
-
         }
 
     }
+
+}
+
+function holdTightButton(id) {
+
+    const button = document.querySelector(`#${id}`)
+
+    let scale = 0.9
+
+    let soundButton = new Audio('sounds/sound-button.wav')
+
+    soundButton.play()
+
+    button.style.transform = `scale(${scale})`
 
 }
 
