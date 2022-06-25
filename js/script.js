@@ -40,7 +40,7 @@ confirmButton.addEventListener('mousedown', () => {
 
             let inputPokemonNumber = document.querySelector('#pokemon-number')
 
-            let idPokemon = inputPokemonNumber.value
+            let idPokemon = Number(inputPokemonNumber.value)
 
             showPokemon(idPokemon, arrayPokemons)
 
@@ -60,7 +60,7 @@ for (let c = 0; c < blueNumberButtons.length; c++) {
 
             let inputPokemonNumber = document.querySelector('#pokemon-number')
 
-            let numberOfButton = Number(blueNumberButtons[c].textContent)
+            let numberOfButton = blueNumberButtons[c].textContent
 
             inputPokemonNumber.value += numberOfButton
 
