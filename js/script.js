@@ -36,7 +36,7 @@ confirmButton.addEventListener('mousedown', () => {
 
     if ((pokedexDisplay.className == 'pokedex-display-on') && (pokedexSecondDisplay.className == 'second-display-on')) {
     
-        if (!document.querySelector('#pokemon-display-img')) {
+        if (document.querySelector('#pokemon-number')) {
 
             let inputPokemonNumber = document.querySelector('#pokemon-number')
 
