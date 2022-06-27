@@ -1,5 +1,7 @@
 let arrayPokemons = []
 
+const numRegEx = /\d+/g
+
 const pokedexDisplay = document.querySelector('#pokedex-display')
 
 const pokedexSecondDisplay = document.querySelector('#second-display')
@@ -9,6 +11,118 @@ onButton.addEventListener('mousedown', onPokedex)
 
 const offButton = document.querySelector('#off-button')
 offButton.addEventListener('mousedown', offPokedex)
+
+const controllerButtons = document.querySelectorAll('.controller-button')
+
+for (let controllerButton of controllerButtons) {
+
+    controllerButton.addEventListener('mousedown', () => {
+
+        if ((pokedexDisplay.className == 'pokedex-display-on') && (pokedexSecondDisplay.className == 'second-display-on')) {
+
+            let nextUrlNumber = 1
+
+            let divPokemonList = document.querySelector('#pokemon-list')
+
+            if (controllerButton.id == 'controller-button-top') {
+
+                if (!document.querySelector('#pokemon-display-img')) {
+
+                    nextUrlNumber = 151
+
+                    let divPokemonCard = document.querySelector(`#card-${nextUrlNumber}`)
+
+                    divPokemonList.scrollTo(0, 6350)
+
+                    divPokemonCard.style.transform = `scale(${1.2})`
+    
+                } else {
+
+                    let pokemonImg = document.querySelector('#pokemon-display-img')
+        
+                    let atualImgUrl = pokemonImg.getAttribute('src')
+
+                    let atualUrlNumber = Number(atualImgUrl.match(numRegEx))
+
+                    if (atualUrlNumber >= 4) {
+
+                        nextUrlNumber = atualUrlNumber - 3
+
+                    } else {
+
+                        nextUrlNumber = 151
+
+                    }
+
+                }
+
+            } /*else if (controllerButton.id == 'controller-button-left') {
+
+
+
+            } else if (controllerButton.id == 'controller-button-right') {
+
+
+
+            } else if (controllerButton.id == 'controller-button-bottom') {
+
+
+            }*/
+
+            showPokemon(nextUrlNumber, arrayPokemons)
+            
+            
+           
+            
+            
+            
+            /*if (!document.querySelector('#pokemon-display-img')) {
+
+                let atualUrlNumber = 0
+                let nextUrlNumber = atualUrlNumber + 1
+
+            } else {
+
+                let pokemonImg = document.querySelector('#pokemon-display-img')
+        
+                let atualImgUrl = pokemonImg.getAttribute('src')
+
+                const numRegEx = /\d+/g
+
+                let atualUrlNumber = Number(atualImgUrl.match(numRegEx))
+
+            }*/
+
+                /* Se eu clicar em próximo
+
+                   
+                    showPokemon(nextUrlNumber, arrayPokemons)
+
+                Se eu clicar em anterior
+
+                    //let beforeUrlNumber = atualUrlNumber - 1
+
+                    //showPokemon(nextUrlNumber, arrayPokemons)
+
+                Se eu clicar pra cima
+
+                     let upUrlNumber = atualUrlNumber - 2
+
+                     //showPokemon(nextUrlNumber, arrayPokemons)
+
+                Se eu clicar pra cima
+
+                    let downUrlNumber = atualUrlNumber + 2
+
+                    showPokemon(nextUrlNumber, arrayPokemons)*/
+         
+       
+
+        }
+
+    })
+
+}
 
 const clearButton = document.querySelector('#clear-button')
 clearButton.addEventListener('mousedown', () => {
@@ -160,13 +274,11 @@ function holdTightButton(id) {
 
     const button = document.querySelector(`#${id}`)
 
-    let scale = 0.9
-
     let soundButton = new Audio('sounds/sound-button.wav')
 
     soundButton.play()
 
-    button.style.transform = `scale(${scale})`
+    button.style.transform = `scale(${0.9})`
 
 }
 
@@ -174,9 +286,7 @@ function dropButton(id) {
 
     const button = document.querySelector(`#${id}`)
 
-    let scale = 1.0
-
-    button.style.transform = `scale(${scale})`
+    button.style.transform = `scale(${1.0})`
 
 }
 
@@ -234,7 +344,7 @@ async function getPokemons(showPokemon) {
 
         divPokemonCard.setAttribute('class', 'pokemon-card')
 
-        divPokemonCard.setAttribute('id', `${num}`)
+        divPokemonCard.setAttribute('id', `card-${num}`)
 
         let urlPokemonImage = (arrayPokemons[num][6])
 
@@ -250,7 +360,9 @@ async function getPokemons(showPokemon) {
 
         divPokemonCard.addEventListener('click', () => {
 
-           showPokemon(0, arrayPokemons, divPokemonCard)
+            let idPokemon = Number(divPokemonCard.getAttribute('id').match(numRegEx))
+
+            showPokemon(idPokemon, arrayPokemons)
 
         })
 
@@ -258,7 +370,7 @@ async function getPokemons(showPokemon) {
 
 }
 
-const showPokemon = (id = 0, arrayPokemons = [], divPokemonCard = 0) => {
+const showPokemon = (id = 0, arrayPokemons = []) => {
 
     if ((pokedexDisplay.className == 'pokedex-display-on') && (pokedexSecondDisplay.className == 'second-display-on')) {
 
@@ -270,17 +382,7 @@ const showPokemon = (id = 0, arrayPokemons = [], divPokemonCard = 0) => {
            
         }
 
-        let idPokemon
-
-        if (divPokemonCard == 0) {
-
-            idPokemon = id
- 
-        } else {
-
-            idPokemon = divPokemonCard.id
-
-        }
+        let idPokemon = id
 
         if (idPokemon < 1 || idPokemon > 151) {
 
