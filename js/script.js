@@ -26,9 +26,11 @@ for (let controllerButton of controllerButtons) {
 
             if (document.querySelector('#pokemon-display-img')) {
 
-                let pokemonImg = document.querySelector('#pokemon-display-img')
+                let divPokemonCard = 0
+
+                let imgDisplayPokemon = document.querySelector('#pokemon-display-img')
         
-                let atualImgUrl = pokemonImg.getAttribute('src')
+                let atualImgUrl = imgDisplayPokemon.getAttribute('src')
 
                 let atualUrlNumber = Number(atualImgUrl.match(numRegEx))
 
@@ -42,6 +44,8 @@ for (let controllerButton of controllerButtons) {
                     } else {
 
                         nextUrlNumber = 151
+
+                        divPokemonList.scrollBy(0, 50);
 
                     }    
     
@@ -61,6 +65,23 @@ for (let controllerButton of controllerButtons) {
                     if (atualUrlNumber < 151) {
 
                         nextUrlNumber = atualUrlNumber + 1
+
+                        divPokemonCard = document.querySelector(`#card-${nextUrlNumber}`)
+
+                        let imgCardUrl = divPokemonCard.firstChild.getAttribute('src')
+
+                        console.log(atualImgUrl)
+
+                        console.log(imgCardUrl)
+
+                        atualImgUrl = imgCardUrl
+
+                        if (atualImgUrl ==  imgCardUrl) {
+
+                            divPokemonCard.style.borderColor = `scale(${1.2})`
+
+                        }
+
 
                     } else if (atualUrlNumber == 151) {
 
