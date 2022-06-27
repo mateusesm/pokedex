@@ -59,9 +59,37 @@ for (let controllerButton of controllerButtons) {
                         divPokemonList.scrollTo(0, 6350)
 
                     }    
+                } else if (controllerButton.id == 'controller-middle-button-right') {
+
+                    if (atualUrlNumber < 151) {
+
+                        nextUrlNumber = atualUrlNumber + 1
+
+                    } else if (atualUrlNumber == 151) {
+
+                        nextUrlNumber = 1
+
+                        //divPokemonList.scrollTo(0, 6350)
+
+                    }    
+
+                } else if (controllerButton.id == 'controller-bottom-button') {
+
+                    if (atualUrlNumber >= 1 || atualUrlNumber <= 148) {
+
+                        nextUrlNumber = atualUrlNumber + 3
+
+                    } else {
+
+                        nextUrlNumber = 151
+
+                        //divPokemonList.scrollTo(0, 6350)
+
+                    }    
+
                 }
 
-                let divPokemonCard = document.querySelector(`#card-${nextUrlNumber}`)
+                /*let divPokemonCard = document.querySelector(`#card-${nextUrlNumber}`)
 
                 let imgCardPokemon = divPokemonCard.firstElementChild
 
@@ -87,7 +115,7 @@ for (let controllerButton of controllerButtons) {
 
                     console.log('oi')
 
-                }  
+                } */ 
 
             }
 
