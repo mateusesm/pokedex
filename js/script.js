@@ -74,8 +74,6 @@ for (let controllerButton of controllerButtons) {
 
                         nextUrlNumber = atualUrlNumber + 3
 
-                        divPokemonList.scrollTo(0, 40)
-
                     } else if (atualUrlNumber >= 149 && atualUrlNumber <= 150) {
 
                         nextUrlNumber = 151
@@ -88,111 +86,9 @@ for (let controllerButton of controllerButtons) {
 
                 }
 
-                /*let divPokemonCard = document.querySelector(`#card-${nextUrlNumber}`)
-
-                let imgCardPokemon = divPokemonCard.firstElementChild
-
-                let atualCardUrl = imgCardPokemon.getAttribute('src')
-
-                let newAtualImgUrl =  atualImgUrl
-
-                newAtualImgUrl = atualCardUrl
-
-                if (newAtualImgUrl == atualCardUrl) {
-
-                    divPokemonCard.style.transform = `scale(${1.2})`
-
-                    newAtualImgUrl = 0
-
-                }
-
-                if (newAtualImgUrl != atualCardUrl) {
-
-                    let divPokemonCardBefore = document.querySelector(`#card-${nextUrlNumber - 1}`)
-
-                    divPokemonCardBefore.style.transform = `scale(${1.0})`
-
-                    console.log('oi')
-
-                } */ 
-
             }
 
             showPokemon(nextUrlNumber, arrayPokemons)
-
-
-            /*else {
-
-                //divPokemonList.scrollTo(0, 6350)
-
-                   
-
-                   
-
-                }*/
-            
-            
-            /*else if (controllerButton.id == 'controller-button-left') {
-
-
-
-            } else if (controllerButton.id == 'controller-button-right') {
-
-
-
-            } else if (controllerButton.id == 'controller-button-bottom') {
-
-
-            }*/
-
-           
-            
-            
-           
-            
-            
-            
-            /*if (!document.querySelector('#pokemon-display-img')) {
-
-                let atualUrlNumber = 0
-                let nextUrlNumber = atualUrlNumber + 1
-
-            } else {
-
-                let pokemonImg = document.querySelector('#pokemon-display-img')
-        
-                let atualImgUrl = pokemonImg.getAttribute('src')
-
-                const numRegEx = /\d+/g
-
-                let atualUrlNumber = Number(atualImgUrl.match(numRegEx))
-
-            }*/
-
-                /* Se eu clicar em próximo
-
-                   
-                    showPokemon(nextUrlNumber, arrayPokemons)
-
-                Se eu clicar em anterior
-
-                    //let beforeUrlNumber = atualUrlNumber - 1
-
-                    //showPokemon(nextUrlNumber, arrayPokemons)
-
-                Se eu clicar pra cima
-
-                     let upUrlNumber = atualUrlNumber - 2
-
-                     //showPokemon(nextUrlNumber, arrayPokemons)
-
-                Se eu clicar pra cima
-
-                    let downUrlNumber = atualUrlNumber + 2
-
-                    showPokemon(nextUrlNumber, arrayPokemons)*/
-         
-       
 
         }
 
