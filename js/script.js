@@ -38,25 +38,22 @@ for (let controllerButton of controllerButtons) {
 
                         nextUrlNumber = atualUrlNumber - 3
 
+
                     } else {
 
                         nextUrlNumber = 151
-
-                        divPokemonList.scrollTo(0, 6350)
 
                     }    
     
                 } else if (controllerButton.id == 'controller-middle-button-left') {
 
-                    if (atualUrlNumber > 1) {
+                    if (atualUrlNumber > 1 && atualUrlNumber <= 151) {
 
                         nextUrlNumber = atualUrlNumber - 1
 
-                    } else {
+                    } else if (atualUrlNumber == 1) {
 
                         nextUrlNumber = 151
-
-                        divPokemonList.scrollTo(0, 6350)
 
                     }    
                 } else if (controllerButton.id == 'controller-middle-button-right') {
@@ -69,21 +66,23 @@ for (let controllerButton of controllerButtons) {
 
                         nextUrlNumber = 1
 
-                        //divPokemonList.scrollTo(0, 6350)
-
                     }    
 
                 } else if (controllerButton.id == 'controller-bottom-button') {
 
-                    if (atualUrlNumber >= 1 || atualUrlNumber <= 148) {
+                    if (atualUrlNumber <= 148) {
 
                         nextUrlNumber = atualUrlNumber + 3
 
-                    } else {
+                        divPokemonList.scrollTo(0, 40)
+
+                    } else if (atualUrlNumber >= 149 && atualUrlNumber <= 150) {
 
                         nextUrlNumber = 151
 
-                        //divPokemonList.scrollTo(0, 6350)
+                    } else {
+
+                        nextUrlNumber = 1
 
                     }    
 
