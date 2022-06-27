@@ -24,25 +24,15 @@ for (let controllerButton of controllerButtons) {
 
             let divPokemonList = document.querySelector('#pokemon-list')
 
-            if (controllerButton.id == 'controller-button-top') {
+            if (document.querySelector('#pokemon-display-img')) {
 
-                if (!document.querySelector('#pokemon-display-img')) {
-
-                    nextUrlNumber = 151
-
-                    let divPokemonCard = document.querySelector(`#card-${nextUrlNumber}`)
-
-                    divPokemonList.scrollTo(0, 6350)
-
-                    divPokemonCard.style.transform = `scale(${1.2})`
-    
-                } else {
-
-                    let pokemonImg = document.querySelector('#pokemon-display-img')
+                let pokemonImg = document.querySelector('#pokemon-display-img')
         
-                    let atualImgUrl = pokemonImg.getAttribute('src')
+                let atualImgUrl = pokemonImg.getAttribute('src')
 
-                    let atualUrlNumber = Number(atualImgUrl.match(numRegEx))
+                let atualUrlNumber = Number(atualImgUrl.match(numRegEx))
+
+                if (controllerButton.id == 'controller-button-top') { 
 
                     if (atualUrlNumber >= 4) {
 
@@ -52,11 +42,70 @@ for (let controllerButton of controllerButtons) {
 
                         nextUrlNumber = 151
 
-                    }
+                        divPokemonList.scrollTo(0, 6350)
+
+                    }    
+    
+                } else if (controllerButton.id == 'controller-middle-button-left') {
+
+                    if (atualUrlNumber > 1) {
+
+                        nextUrlNumber = atualUrlNumber - 1
+
+                    } else {
+
+                        nextUrlNumber = 151
+
+                        divPokemonList.scrollTo(0, 6350)
+
+                    }    
+                }
+
+                let divPokemonCard = document.querySelector(`#card-${nextUrlNumber}`)
+
+                let imgCardPokemon = divPokemonCard.firstElementChild
+
+                let atualCardUrl = imgCardPokemon.getAttribute('src')
+
+                let newAtualImgUrl =  atualImgUrl
+
+                newAtualImgUrl = atualCardUrl
+
+                if (newAtualImgUrl == atualCardUrl) {
+
+                    divPokemonCard.style.transform = `scale(${1.2})`
+
+                    newAtualImgUrl = 0
 
                 }
 
-            } /*else if (controllerButton.id == 'controller-button-left') {
+                if (newAtualImgUrl != atualCardUrl) {
+
+                    let divPokemonCardBefore = document.querySelector(`#card-${nextUrlNumber - 1}`)
+
+                    divPokemonCardBefore.style.transform = `scale(${1.0})`
+
+                    console.log('oi')
+
+                }  
+
+            }
+
+            showPokemon(nextUrlNumber, arrayPokemons)
+
+
+            /*else {
+
+                //divPokemonList.scrollTo(0, 6350)
+
+                   
+
+                   
+
+                }*/
+            
+            
+            /*else if (controllerButton.id == 'controller-button-left') {
 
 
 
@@ -69,7 +118,7 @@ for (let controllerButton of controllerButtons) {
 
             }*/
 
-            showPokemon(nextUrlNumber, arrayPokemons)
+           
             
             
            
