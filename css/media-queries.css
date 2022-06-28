@@ -1,0 +1,111 @@
+@media (max-width: 1310px)  {
+
+    html {
+
+        font-size: 55%;
+    }
+
+    div.container div#pokedex-container {
+
+        max-width: 65vw;
+        height: 95vh;
+    
+    }
+    
+    div.container div#pokemon-list {
+   
+        max-width: 35vw;
+        height: 85vh;
+    
+    }
+
+}
+
+@media (max-width: 1100px)  {
+
+    html {
+
+        font-size: 45%;
+    }
+
+    div.container div#pokedex-container {
+
+        height: 85vh;
+    
+    } 
+
+    div.container div#pokemon-list {
+   
+        height: 75vh;
+    
+    }
+
+    div.container div#pokemon-list div.pokemon-card {
+    
+        max-width: 80px;
+        flex: 1 1 80px;
+        height: 100px;
+    
+    }
+
+}
+
+@media (max-width: 900px)  {
+
+    html {
+
+        font-size: 40%;
+    }
+
+    div.container div#pokedex-container {
+
+        height: 75vh;
+    
+    }
+    
+    div.container div#pokemon-list {
+   
+        height: 65vh;
+    
+    }
+
+    div.container div#pokemon-list div.pokemon-card {
+    
+        max-width: 70px;
+        flex: 1 1 70px;
+        height: 90px;
+    
+    }
+
+}
+
+@media (max-width: 800px)  {
+
+    html {
+
+        font-size: 35%;
+    }
+
+    div.container div#pokedex-container {
+
+        height: 65vh;
+    
+    }
+    
+    div.container div#pokemon-list {
+   
+        height: 55vh;
+    
+    }
+
+    div.container div#pokemon-list div.pokemon-card {
+    
+        max-width: 60px;
+        flex: 1 1 60px;
+        height: 80px;
+    
+    }
+
+}
+
+
