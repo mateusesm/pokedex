@@ -40,12 +40,9 @@ for (let controllerButton of controllerButtons) {
 
                         nextUrlNumber = atualUrlNumber - 3
 
-
                     } else {
 
                         nextUrlNumber = 151
-
-                        divPokemonList.scrollBy(0, 50);
 
                     }    
     
@@ -65,23 +62,6 @@ for (let controllerButton of controllerButtons) {
                     if (atualUrlNumber < 151) {
 
                         nextUrlNumber = atualUrlNumber + 1
-
-                        divPokemonCard = document.querySelector(`#card-${nextUrlNumber}`)
-
-                        let imgCardUrl = divPokemonCard.firstChild.getAttribute('src')
-
-                        console.log(atualImgUrl)
-
-                        console.log(imgCardUrl)
-
-                        atualImgUrl = imgCardUrl
-
-                        if (atualImgUrl ==  imgCardUrl) {
-
-                            divPokemonCard.style.borderColor = `scale(${1.2})`
-
-                        }
-
 
                     } else if (atualUrlNumber == 151) {
 
@@ -159,15 +139,15 @@ confirmButton.addEventListener('mousedown', () => {
 
 const blueNumberButtons = document.querySelectorAll('.blue-number-button')
 
-for (let c = 0; c < blueNumberButtons.length; c++) {
+for (let blueNumberButton of blueNumberButtons) {
 
-    blueNumberButtons[c].addEventListener('mousedown', () => {
+    blueNumberButton.addEventListener('mousedown', () => {
 
         if ((pokedexDisplay.className == 'pokedex-display-on') && (pokedexSecondDisplay.className == 'second-display-on')) {
 
             let inputPokemonNumber = document.querySelector('#pokemon-number')
 
-            let numberOfButton = blueNumberButtons[c].textContent
+            let numberOfButton = blueNumberButton.textContent
 
             inputPokemonNumber.value += numberOfButton
 
@@ -195,7 +175,7 @@ const initialize = () => {
 
     }
 
-    pokedexSecondDisplay.innerHTML = '<p>Olá! Sou a Pokédex da região de Kanto, escolha qualquer pokémon pelas cartas ao lado ou digitando seu número, e te mostrarei seus principais dados!</p>'
+    pokedexSecondDisplay.innerHTML = '<p>Olá! Sou a Pokédex da região de Kanto, escolha qualquer pokémon pelas cartas ao lado, digitando seu número ou pelos botões direcionais, e te mostrarei seus principais dados!</p>'
 
     const inputPokemonNumber = document.createElement('input')
 
@@ -363,7 +343,7 @@ async function getPokemons(showPokemon) {
 
 }
 
-const showPokemon = (id = 0, arrayPokemons = []) => {
+const showPokemon = (idPokemon = 0, arrayPokemons = []) => {
 
     if ((pokedexDisplay.className == 'pokedex-display-on') && (pokedexSecondDisplay.className == 'second-display-on')) {
 
@@ -374,8 +354,6 @@ const showPokemon = (id = 0, arrayPokemons = []) => {
             pokedexDisplay.removeChild(removePokemonImg)
            
         }
-
-        let idPokemon = id
 
         if (idPokemon < 1 || idPokemon > 151) {
 
