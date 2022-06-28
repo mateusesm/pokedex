@@ -28,6 +28,7 @@ body {
 div.container {
 
     display: flex;
+    justify-content: center;
     align-items: center;
     padding: 1%;
     width: 100vw;
@@ -51,7 +52,7 @@ div.container div#pokedex-container {
     width: 100%;
     height: 90vh;
 
-    background-color: blue;
+    /*background-color: blue;*/
 
 }
 
@@ -605,6 +606,7 @@ div.container div#pokemon-list {
    
     display: flex;
     justify-content: flex-start;
+    align-items: center;
     flex-wrap: wrap;
     overflow-y: auto;
     max-width: 30vw;
@@ -613,7 +615,7 @@ div.container div#pokemon-list {
     width: 100%;
     height: 80vh;
 
-    background-color: red;
+   /* background-color: red;*/
 
 }
 
