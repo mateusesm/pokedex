@@ -22,6 +22,12 @@ body {
 
     font-size: 1.6rem;
     font-family: Arial, sans-serif;
+
+    background-image: url("../images/forest.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
     
 }
 
@@ -33,12 +39,6 @@ div.container {
     padding: 1%;
     width: 100vw;
     height: 100vh;
-
-    background-image: url("../images/forest.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
 
 }
 
