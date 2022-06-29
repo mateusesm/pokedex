@@ -98,8 +98,8 @@
 
     div.container div#pokedex-container {
 
-        max-width: 65vw;
-        height: 90vh;
+        max-width: 60vw;
+        height: 80vh;
 
     }
 
@@ -109,11 +109,11 @@
         overflow-x: hidden;
         overflow-y: auto;
         max-width: 30vw;
-        height: 80vh;
+        height: 70vh;
         padding: 1%;
         margin-top: 7%;
 
-        background-color: blue;
+        background-color: rgb(0, 255, 0);
     
     }
     
