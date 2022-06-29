@@ -505,7 +505,8 @@ div.container div#pokedex-container div#pokedex div#right-pokedex div#small-butt
     align-items: center;
     width: 90%;
     height: 10%;
-    margin: 1%;
+    margin-top: 1%;
+    background-color: green;
 
 }
 
@@ -514,13 +515,13 @@ div.container div#pokedex-container div#pokedex div#right-pokedex div#small-butt
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 28%;
-    height: 70%;
+    width: 27%;
+    height: 60%;
     border-radius: 8px;
     border: 1px solid rgba(0, 0, 0, .7);
     background-color: #222222;
     color: #dedede;
-    margin: 1%;
+    margin-left: 3%;
     transition: transform 0.1s;
     cursor: pointer;
 
