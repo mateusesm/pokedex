@@ -52,7 +52,7 @@
 
 }
 
-@media (max-width: 896px) {
+@media (max-width: 915px) {
 
     html {
 
@@ -113,6 +113,7 @@
 
     div.container div#pokedex-container {
 
+        max-width: 100vw;
         height: 35vh;
 
     }
@@ -126,10 +127,13 @@
 
     div.container div#pokemon-list {
    
- 
+        flex-direction: column;
+        max-width: 95vw;
         height: 11vh;
         padding: 1%;
         margin-top: 1%;
+        overflow-x: auto;
+        overflow-y: hidden;
     
     }
     
