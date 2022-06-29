@@ -1,14 +1,8 @@
-@media (max-width: 1280px) {
+@media (max-width: 1280px) and (height: 720px) {
 
-    div.container div#pokedex-container {
+    html {
 
-        height: 80vh;
-    
-    }
-
-    div.container div#pokemon-list {
-
-        height: 70vh;
+        font-size: 60%;
 
     }
 
@@ -16,25 +10,11 @@
 
 @media (max-width: 1024px) {
 
-
     html {
 
         font-size: 50%;
 
     }
-
-    div.container div#pokemon-list div.pokemon-card {
-
-        max-width: 80px;
-        flex: 1 1 80px;
-        height: 100px;
-    
-    }
-
-
-}
-
-@media (max-width: 912px)  {
 
     div.container {
 
@@ -45,7 +25,7 @@
     div.container div#pokedex-container {
 
         max-width: 100vw;
-        height: 50vh;
+        height: 75vh;
 
     }
 
@@ -56,101 +36,66 @@
         overflow-x: auto;
         overflow-y: hidden;
         max-width: 95vw;
-        height: 15vh;
+        height: 20vh;
         padding: 1%;
         margin-top: 1%;
     
-    } 
-
-}
-
-@media (max-width: 768px) {
-
-    html {
-
-        font-size: 56%;
- 
     }
-
-    div.container div#pokemon-list {
-   
-        height: 16vh;
     
-    } 
+    div.container div#pokemon-list div.pokemon-card {
 
-
-}
-
-@media (max-width: 510px) {
-
-    html {
-
-        font-size: 30%;
-    }
-
-    div.container div#pokedex-container {
-
-        max-width: 100vw;
-        height: 60vh;
-    }
-
-
-    div.container div#pokemon-list {
-   
-        max-width: 95vw;
-        height: 18vh;
+        max-width: 80px;
+        flex: 1 1 80px;
+        height: 100px;
     
     }
 
 }
 
-@media (max-width: 450px) {
-
-    html {
-
-        font-size: 28%;
-    }
-
-}
-
-@media (max-width: 410px) {
+@media (max-width: 414px) {
 
     html {
 
         font-size: 25%;
+
+    }
+
+    div.container {
+
+        flex-direction: column;
+    
     }
 
     div.container div#pokedex-container {
 
-        height: 55vh;
+        height: 35vh;
+
     }
 
 
-    div.container div#pokemon-list {
+    div.container div#pokedex-container div#pokedex {
 
-        height: 17vh;
+        width: 100%;
+
+    }
+
+    div.container div#pokemon-list {
+   
+ 
+        height: 11vh;
+        padding: 1%;
+        margin-top: 1%;
+    
+    }
+    
+    div.container div#pokemon-list div.pokemon-card {
+
+        max-width: 60px;
+        flex: 1 1 60px;
+        height: 80px;
+        border: 3px solid #dedede;
     
     }
 
 }
 
-@media (max-width: 360px) {
-
-    html {
-
-        font-size: 20%;
-    }
-
-    div.container div#pokedex-container {
-
-        height: 50vh;
-    }
-
-
-    div.container div#pokemon-list {
-
-        height: 16vh;
-    
-    }
-
-}
