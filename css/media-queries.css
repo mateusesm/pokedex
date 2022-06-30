@@ -97,6 +97,13 @@
 
     }
 
+
+    div.container div#pokedex-container div#pokedex div#right-pokedex div#blue-buttons-container {
+
+        grid-gap: 3px;
+     
+    }
+
     div.container div#pokemon-list {
    
         flex-direction: row;
