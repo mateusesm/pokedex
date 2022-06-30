@@ -175,6 +175,8 @@ const initialize = () => {
 
     }
 
+    blueLed.style.backgroundColor = '#146BA0'
+
     pokedexSecondDisplay.innerHTML = '<p>Olá! Sou a Pokédex da região de Kanto, escolha qualquer pokémon pelas cartas ao lado, digitando seu número ou pelos botões direcionais, e te mostrarei seus principais dados!</p>'
 
     const inputPokemonNumber = document.createElement('input')
@@ -368,8 +370,6 @@ const showPokemon = (idPokemon = 0, arrayPokemons = []) => {
             let urlPokemonImage = arrayPokemons[idPokemon][6]
 
             let pokemonImg = document.createElement('img')
-    
-            let blueLed = document.querySelector('#blue-led')
     
             let soundPokemonDisplay = new Audio('sounds/sound-pokemon-display.wav')
     
