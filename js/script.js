@@ -189,6 +189,8 @@ const initialize = () => {
 
     inputPokemonNumber.setAttribute('maxlength', '4')
 
+    inputPokemonNumber.setAttribute('disabled', "true")
+
     pokedexSecondDisplay.appendChild(inputPokemonNumber)
 
 }
