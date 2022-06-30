@@ -234,8 +234,8 @@ div.container div#pokedex-container div#pokedex div#left-pokedex div#display-bor
 
 div.container div#pokedex-container div#pokedex div#left-pokedex div#display-border div#bottom-led-container div#bottom-led-display {
 
-    width: 20px;
-    height: 20px;
+    width: 2rem;
+    height: 2rem;
     background-color: #DE072D;
     border-radius: 100%;
     border: 1px solid rgba(0, 0, 0, .7);
