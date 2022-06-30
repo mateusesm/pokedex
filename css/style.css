@@ -171,8 +171,8 @@ div.container div#pokedex-container div#pokedex div#left-pokedex div#display-bor
    display: flex;
    justify-content: space-between;
    align-items: center;
-   width: 20%;
-   height: 5%;
+   width: 7rem;
+   height: 1.4rem;
    margin-bottom: 2%;
 
 }
