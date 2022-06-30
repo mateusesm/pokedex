@@ -504,6 +504,8 @@ div.container div#pokedex-container div#pokedex div#right-pokedex div#small-butt
     height: 10%;
     margin-top: 1.5%;
 
+    background-color: green;
+
 }
 
 div.container div#pokedex-container div#pokedex div#right-pokedex div#small-buttons-container > div {
