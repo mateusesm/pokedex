@@ -310,3 +310,32 @@
 
 }
 
+@media (max-width: 375px) {
+
+    div.container div#pokedex-container {
+
+        height: 40vh;
+
+    }
+
+
+    div.container div#pokedex-container div#pokedex {
+
+        width: 100%;
+
+    }
+
+    div.container div#pokemon-list {
+   
+        height: 14vh;
+    
+    }
+    
+    div.container div#pokemon-list div.pokemon-card {
+
+        border: 1px solid #dedede;
+    
+    }
+
+}
+
