@@ -1,0 +1,52 @@
+// colors
+$font-color: #dedede !important;
+$pokedex-color: #dc0a2d !important;
+$pokedex-visor-off: #000;
+
+$button-grey: #222 !important;
+$container-green: #52ae5f;
+
+$led-blue: #146ba0 !important;
+$led-red: #7a0000 !important;
+$led-yellow: #ceb005 !important;
+$led-green: #36693e !important;
+
+//fonts
+$font-main: Arial, Helvetica, sans-serif;
+$font-pixel: "VT323", monospace;
+
+// backgrounds
+$background-pokemon-card: url("../images/background-blue-pokeball.jpg");
+$background-visor-on: url("../images/forest-visor.png");
+$background-main: url("../images/forest.png");
+
+@mixin background-pokemon($background, $fixed: false) {
+  background-image: $background;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+
+  @if $fixed == true {
+    background-attachment: fixed;
+  }
+}
+
+* {
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  @include background-main();
+  font-size: 1.6rem;
+  color: $font-color;
+  font-family: $font-main;
+}

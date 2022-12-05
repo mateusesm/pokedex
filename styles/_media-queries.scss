@@ -6,7 +6,7 @@
     
     }
 
-    div.container div#pokedex-container {
+    div.container div.pokedex-container {
 
         max-width: 100vw;
         height: 75vh;
@@ -30,7 +30,7 @@
 
 @media (max-width: 1024px) and (height: 1366px) {
 
-    div.container div#pokedex-container {
+    div.container div.pokedex-container {
 
         height: 50vh;
 
@@ -58,14 +58,14 @@
     
     }
 
-    div.container div#pokedex-container {
+    div.container div.pokedex-container {
 
         max-width: 60vw;
         height: 85vh;
 
     }
 
-    div.container div#pokedex-container div#pokedex div#right-pokedex div#blue-buttons-container {
+    div.container div.pokedex-container div#pokedex div#right-pokedex div#blue-buttons-container {
 
         grid-gap: 0.3rem;
      
