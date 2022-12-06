@@ -1,0 +1,176 @@
+div#right-pokedex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 47%;
+  height: 82%;
+  margin-top: auto;
+  background-color: $pokedex-color;
+  border: 1rem solid rgba(0, 0, 0, 0.3);
+  border-left: 1.5rem solid rgba(0, 0, 0, 0.3);
+  border-radius: 0.8rem;
+  box-shadow: 0.7rem 0.7rem 1rem #000000;
+
+  div#second-display-container {
+    display: flex;
+    width: 90%;
+    height: 50%;
+    margin-top: 7%;
+
+    div#second-display {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 100%;
+      height: 100%;
+      border-radius: 0.8rem;
+      border: 0.1rem solid rgba(0, 0, 0, 0.7);
+      padding: 2%;
+      background-color: $pokedex-visor-off;
+      text-align: left;
+      overflow-y: auto;
+      transition: 0.5s;
+    }
+
+    div.second-display-off {
+      p {
+        opacity: 0;
+      }
+
+      input#pokemon-number {
+        opacity: 0;
+      }
+    }
+
+    div.second-display-on {
+      p {
+        position: relative;
+        font-family: $font-pixel;
+        font-size: 2.5rem;
+        text-align: left;
+        margin: 1%;
+        opacity: 1;
+      }
+
+      input#pokemon-number {
+        position: relative;
+        width: 100%;
+        height: 20%;
+        font-family: $font-pixel;
+        background-color: #000000;
+        border: 0.1rem solid #000000;
+        font-size: 2.5rem;
+        padding: 0 2% 0 2%;
+        opacity: 1;
+        color: $font-color;
+      }
+    }
+  }
+
+  div#blue-buttons-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 0.5rem;
+
+    width: 90%;
+    height: 12%;
+    margin-top: 3%;
+
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 4%;
+      background-color: $led-blue;
+      height: 100%;
+      border: 0.1rem solid rgba(0, 0, 0, 0.7);
+      border-radius: 0.5rem;
+      transition: transform 0.1s;
+      cursor: pointer;
+    }
+  }
+
+  div#small-buttons-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 90%;
+    height: 8%;
+    margin-top: 1.5%;
+
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 28%;
+      height: 70%;
+      border-radius: 0.8rem;
+      border: 0.1rem solid rgba(0, 0, 0, 0.7);
+      background-color: $button-grey;
+      margin-left: 3%;
+      transition: transform 0.1s;
+      cursor: pointer;
+    }
+  }
+
+  div#white-buttons-and-yellow-led-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    height: 8%;
+
+    div#white-buttons-container {
+      display: flex;
+      width: 40%;
+      height: 90%;
+
+      div {
+        background-color: $font-color;
+        width: 100%;
+        height: 90%;
+        margin: 1%;
+        border-radius: 0.5rem;
+        border: 0.1rem solid rgba(0, 0, 0, 0.7);
+        transition: transform 0.1s;
+        cursor: pointer;
+      }
+    }
+
+    div#yellow-led-container {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 20%;
+      height: 100%;
+
+      div#yellow-led {
+        width: 45%;
+        height: 80%;
+        border-radius: 100%;
+        border: 0.1rem solid rgba(0, 0, 0, 0.7);
+        background-color: $led-yellow;
+      }
+    }
+  }
+
+  div#two-gray-buttons-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    height: 12%;
+
+    div {
+      width: 40%;
+      height: 60%;
+      display: flex;
+      background-color: $button-grey;
+      border-radius: 0.5rem;
+      border: 0.1rem solid rgba(0, 0, 0, 0.7);
+      transition: transform 0.1s;
+      cursor: pointer;
+    }
+  }
+}
