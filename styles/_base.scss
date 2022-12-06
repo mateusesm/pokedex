@@ -1,19 +1,14 @@
 * {
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  @include initial-config()
 }
 
 html {
-  font-size: 62.5%;
+  font-size: $percent-html-font;
 }
 
 body {
   @include background-pokemon($background-main, true);
-  font-size: 1.6rem;
+  font-size: $rem-font-size;
   color: $font-color;
   font-family: $font-main;
 }

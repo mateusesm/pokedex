@@ -1,7 +1,5 @@
 div#pokemon-list {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  @include display-flex-config(center, flex-start);
   flex-wrap: wrap;
   overflow-y: auto;
   max-width: 30vw;

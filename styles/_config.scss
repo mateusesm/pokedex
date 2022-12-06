@@ -14,11 +14,28 @@ $led-green: #36693e !important;
 //fonts
 $font-main: Arial, Helvetica, sans-serif;
 $font-pixel: "VT323", monospace;
+$percent-html-font: 62.5%;
+$rem-font-size: 1.6rem;
 
 // backgrounds
 $background-pokemon-card: url("../images/background-blue-pokeball.jpg");
 $background-visor-on: url("../images/forest-visor.png");
 $background-main: url("../images/forest.png");
+
+@mixin initial-config() {
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@mixin display-flex-config($align: none, $justify: none) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+}
 
 @mixin background-pokemon($background, $fixed: false) {
   background-image: $background;
