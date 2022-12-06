@@ -175,7 +175,7 @@ const initialize = () => {
 
     }
 
-    blueLed.style.backgroundColor = '#146BA0'
+    blueLed.style.backgroundColor = '#1C91DA'
 
     pokedexSecondDisplay.innerHTML = '<p>Olá! Sou a Pokédex da região de Kanto, escolha qualquer pokémon pelas cartas ao lado, digitando seu número ou pelos botões direcionais, e te mostrarei seus principais dados!</p>'
 

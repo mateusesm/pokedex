@@ -222,6 +222,8 @@ div#left-pokedex {
         background-color: $pokedex-color;
         border: none;
         border-radius: none;
+        margin-top: 0.1rem;
+        margin-bottom: 0.2rem;
 
         div {
           background-color: $button-grey;
