@@ -1,16 +1,53 @@
-let arrayPokemons = []
-
 const numRegEx = /\d+/g
 
-const pokedexDisplay = document.querySelector('#pokedex-display')
 
+const pokedexDisplay = document.querySelector('#pokedex-display')
 const pokedexSecondDisplay = document.querySelector('#second-display')
 
+
+const onPokedex = () => {
+    if ((pokedexDisplay.className == 'pokedex-display-off') && (pokedexSecondDisplay.className == 'second-display-off')) {
+        greenLed.style.backgroundColor = '#7BD434'
+        soundOnButton.play()
+        pokedexDisplay.classList.remove('pokedex-display-off')
+        pokedexSecondDisplay.classList.remove('second-display-off')
+        pokedexDisplay.classList.add('pokedex-display-on')
+        pokedexSecondDisplay.classList.add('second-display-on')
+
+        initialize()
+    }
+
+    return
+
+}
 const onButton = document.querySelector('#on-button')
 onButton.addEventListener('mousedown', onPokedex)
 
+
+const offPokedex = () => {
+    if((pokedexDisplay.className == 'pokedex-display-on') && (pokedexSecondDisplay.className == 'second-display-on')) {
+        greenLed.style.backgroundColor = '#36693E'
+        blueLed.style.backgroundColor = '#146BA0'
+        soundOffButton.play()
+        pokedexDisplay.classList.remove('pokedex-display-on')
+        pokedexSecondDisplay.classList.remove('second-display-on')
+        pokedexDisplay.classList.add('pokedex-display-off')
+        pokedexSecondDisplay.classList.add('second-display-off')
+
+        if (document.querySelector('#pokemon-display-img')) {
+            let pokemonImg = document.querySelector('#pokemon-display-img')
+            pokedexDisplay.removeChild(pokemonImg)
+    
+        }
+
+    }
+
+    return
+
+}
 const offButton = document.querySelector('#off-button')
 offButton.addEventListener('mousedown', offPokedex)
+
 
 const controllerButtons = document.querySelectorAll('.controller-button')
 
@@ -20,13 +57,9 @@ for (let controllerButton of controllerButtons) {
 
         if ((pokedexDisplay.className == 'pokedex-display-on') && (pokedexSecondDisplay.className == 'second-display-on')) {
 
-            let nextUrlNumber = 1
-
-            let divPokemonList = document.querySelector('#pokemon-list')
+            let idPokemon = 1
 
             if (document.querySelector('#pokemon-display-img')) {
-
-                let divPokemonCard = 0
 
                 let imgDisplayPokemon = document.querySelector('#pokemon-display-img')
         
@@ -38,11 +71,11 @@ for (let controllerButton of controllerButtons) {
 
                     if (atualUrlNumber >= 4) {
 
-                        nextUrlNumber = atualUrlNumber - 3
+                        idPokemon = atualUrlNumber - 3
 
                     } else {
 
-                        nextUrlNumber = 151
+                        idPokemon = 151
 
                     }    
     
@@ -50,22 +83,22 @@ for (let controllerButton of controllerButtons) {
 
                     if (atualUrlNumber > 1 && atualUrlNumber <= 151) {
 
-                        nextUrlNumber = atualUrlNumber - 1
+                        idPokemon = atualUrlNumber - 1
 
                     } else if (atualUrlNumber == 1) {
 
-                        nextUrlNumber = 151
+                        idPokemon = 151
 
                     }    
                 } else if (controllerButton.id == 'controller-middle-button-right') {
 
                     if (atualUrlNumber < 151) {
 
-                        nextUrlNumber = atualUrlNumber + 1
+                        idPokemon = atualUrlNumber + 1
 
                     } else if (atualUrlNumber == 151) {
 
-                        nextUrlNumber = 1
+                        idPokemon = 1
 
                     }    
 
@@ -73,15 +106,15 @@ for (let controllerButton of controllerButtons) {
 
                     if (atualUrlNumber <= 148) {
 
-                        nextUrlNumber = atualUrlNumber + 3
+                        idPokemon = atualUrlNumber + 3
 
                     } else if (atualUrlNumber >= 149 && atualUrlNumber <= 150) {
 
-                        nextUrlNumber = 151
+                        idPokemon = 151
 
                     } else {
 
-                        nextUrlNumber = 1
+                        idPokemon = 1
 
                     }    
 
@@ -89,7 +122,7 @@ for (let controllerButton of controllerButtons) {
 
             }
 
-            showPokemon(nextUrlNumber, arrayPokemons)
+            showPokemon(idPokemon)
 
         }
 
@@ -97,58 +130,15 @@ for (let controllerButton of controllerButtons) {
 
 }
 
-const clearButton = document.querySelector('#clear-button')
-clearButton.addEventListener('mousedown', () => {
-
-    if ((pokedexDisplay.className == 'pokedex-display-on') && (pokedexSecondDisplay.className == 'second-display-on')) {
-    
-        if (document.querySelector('#pokemon-number')) {
-
-            let inputPokemonNumber = document.querySelector('#pokemon-number')
-
-            inputPokemonNumber.value = ''
-
-        } else {
-
-            initialize()
-
-        }
-
-    }
-
-})
-
-const confirmButton = document.querySelector('#confirm-button')
-confirmButton.addEventListener('mousedown', () => {
-
-    if ((pokedexDisplay.className == 'pokedex-display-on') && (pokedexSecondDisplay.className == 'second-display-on')) {
-    
-        if (document.querySelector('#pokemon-number')) {
-
-            let inputPokemonNumber = document.querySelector('#pokemon-number')
-
-            let idPokemon = Number(inputPokemonNumber.value)
-
-            showPokemon(idPokemon, arrayPokemons)
-
-        }
-
-    }
-
-})
 
 const blueNumberButtons = document.querySelectorAll('.blue-number-button')
 
 for (let blueNumberButton of blueNumberButtons) {
-
     blueNumberButton.addEventListener('mousedown', () => {
 
-        if ((pokedexDisplay.className == 'pokedex-display-on') && (pokedexSecondDisplay.className == 'second-display-on')) {
-
+        if ((pokedexDisplay.className == 'pokedex-display-on') && (pokedexSecondDisplay.className == 'second-display-on') && (document.querySelector('#pokemon-number'))) {
             let inputPokemonNumber = document.querySelector('#pokemon-number')
-
             let numberOfButton = blueNumberButton.textContent
-
             inputPokemonNumber.value += numberOfButton
 
         }
@@ -157,20 +147,46 @@ for (let blueNumberButton of blueNumberButtons) {
 
 }
 
-let blueLed = document.querySelector('#blue-led')
 
-let greenLed = document.querySelector('#green-led')
+const clearButton = document.querySelector('#clear-button')
+clearButton.addEventListener('mousedown', () => {
 
-let soundOnButton = new Audio('sounds/sound-on.wav')
+    if ((pokedexDisplay.className == 'pokedex-display-on') && (pokedexSecondDisplay.className == 'second-display-on') && (document.querySelector('#pokemon-number'))) {
 
-let soundOffButton = new Audio('sounds/sound-off.wav')
+        let inputPokemonNumber = document.querySelector('#pokemon-number')
+        inputPokemonNumber.value = inputPokemonNumber.value.slice(0, -1)
+
+    } else {
+        initialize()
+    }
+
+})
+
+const confirmButton = document.querySelector('#confirm-button')
+confirmButton.addEventListener('mousedown', () => {
+
+    if ((pokedexDisplay.className == 'pokedex-display-on') && (pokedexSecondDisplay.className == 'second-display-on') && (document.querySelector('#pokemon-number'))) {
+
+        let inputPokemonNumber = document.querySelector('#pokemon-number')
+        let idPokemon = Number(inputPokemonNumber.value)
+        showPokemon(idPokemon)    
+
+    }
+
+})
+
+
+const blueLed = document.querySelector('#blue-led')
+const greenLed = document.querySelector('#green-led')
+
+
+const soundOnButton = new Audio('sounds/sound-on.wav')
+const soundOffButton = new Audio('sounds/sound-off.wav')
+
 
 const initialize = () => {
-
     if (document.querySelector('#pokemon-display-img')) {
-
         let pokemonImg = document.querySelector('#pokemon-display-img')
-
         pokedexDisplay.removeChild(pokemonImg)
 
     }
@@ -182,148 +198,128 @@ const initialize = () => {
     const inputPokemonNumber = document.createElement('input')
 
     inputPokemonNumber.setAttribute('id', 'pokemon-number')
-
     inputPokemonNumber.setAttribute('type', 'text')
-
     inputPokemonNumber.setAttribute('size', '4')
-
     inputPokemonNumber.setAttribute('maxlength', '4')
-
     inputPokemonNumber.setAttribute('disabled', "true")
-
     pokedexSecondDisplay.appendChild(inputPokemonNumber)
 
-}
-
-function onPokedex() {
-
-    if ((pokedexDisplay.className == 'pokedex-display-off') && (pokedexSecondDisplay.className == 'second-display-off')) {
-
-        greenLed.style.backgroundColor = '#7BD434'
-
-        soundOnButton.play()
-            
-        pokedexDisplay.classList.remove('pokedex-display-off')
-
-        pokedexSecondDisplay.classList.remove('second-display-off')
-    
-        pokedexDisplay.classList.add('pokedex-display-on')
-
-        pokedexSecondDisplay.classList.add('second-display-on')
-
-        initialize()
-
-    }
+    return
 
 }
 
-function offPokedex() {
 
-    if((pokedexDisplay.className == 'pokedex-display-on') && (pokedexSecondDisplay.className == 'second-display-on')) {
-
-        greenLed.style.backgroundColor = '#36693E'
-
-        blueLed.style.backgroundColor = '#146BA0'
-
-        soundOffButton.play()
-    
-        pokedexDisplay.classList.remove('pokedex-display-on')
-
-        pokedexSecondDisplay.classList.remove('second-display-on')
-    
-        pokedexDisplay.classList.add('pokedex-display-off')
-
-        pokedexSecondDisplay.classList.add('second-display-off')
-
-        if (document.querySelector('#pokemon-display-img')) {
-
-            let pokemonImg = document.querySelector('#pokemon-display-img')
-    
-            pokedexDisplay.removeChild(pokemonImg)
-    
-        }
-
-    }
-
-}
-
-function holdTightButton(id) {
-
+const holdTightButton = (id) => {
     const button = document.querySelector(`#${id}`)
-
     let soundButton = new Audio('sounds/sound-button.wav')
 
     soundButton.play()
-
     button.style.transform = `scale(${0.9})`
+    return
 
 }
 
-function dropButton(id) {
-
+const dropButton = (id) => {
     const button = document.querySelector(`#${id}`)
-
     button.style.transform = `scale(${1.0})`
-
+    return
 }
 
-function findPokemons(num) {
 
+const findPokemons = async (num) => {
+    await new Promise((resolve => setTimeout(resolve, 100)))
     return fetch(`https://pokeapi.co/api/v2/pokemon/${num}/`)
-
 }
 
-async function getPokemons(showPokemon) {
 
-    const divPokemonList = document.querySelector('#pokemon-list')
+const showPokemon = (idPokemon) => {
 
-    for (let num = 1; num <= 151; num++) {
+    if ((pokedexDisplay.className == 'pokedex-display-on') && (pokedexSecondDisplay.className == 'second-display-on')) {
 
-        if (!localStorage.hasOwnProperty(`pokemon${num}`)) {
+        if (document.querySelector('#pokemon-display-img')) {
+            let removePokemonImg = document.querySelector('#pokemon-display-img')
+            pokedexDisplay.removeChild(removePokemonImg)
+           
+        }
 
-            try {
+        if (idPokemon < 1 || idPokemon > 151) {
 
-                let response = await findPokemons(num)
+            pokedexSecondDisplay.innerHTML = ''
+            pokedexSecondDisplay.innerHTML = `<p>[ERRO!] Pokémon não encontrado.<br/>
+            Somente os 151 pokémons da 1ª geração estão disponíveis.<br/>
+            Verifique o pokémon buscado ou o seu número e tente novamente.</p>`
 
-                let jsonResponse = await response.json()
+        } else {
 
-                arrayPokemons = [
+            const pokemons = JSON.parse((localStorage.getItem('pokemons')))
+            const indexArrayPokemon = idPokemon - 1
+            const pokemon = pokemons[indexArrayPokemon]
 
-                    jsonResponse.id,
-                    jsonResponse.name,
-                    jsonResponse.types,
-                    jsonResponse.abilities,
-                    jsonResponse.height,
-                    jsonResponse.weight,
-                    jsonResponse.sprites.other.home.front_default
-
-                ]
-                
-                localStorage.setItem(`pokemon${num}`, JSON.stringify(arrayPokemons))
-
-            } catch (error) {
-
-                console.log(error)
-
+            let urlPokemonImage = pokemon.front_default
+            let pokemonImg = document.createElement('img')
+            let soundPokemonDisplay = new Audio('sounds/sound-pokemon-display.wav')
+    
+            pokemonImg.setAttribute('src', urlPokemonImage)
+            pokemonImg.setAttribute('id', 'pokemon-display-img')
+    
+            blueLed.style.backgroundColor = '#49B8FA'
+    
+            soundPokemonDisplay.volume -= 0.5
+            soundPokemonDisplay.play()
+    
+            pokedexDisplay.appendChild(pokemonImg)
+            pokedexSecondDisplay.innerHTML = ''
+    
+            pokedexSecondDisplay.innerHTML = `<p>Número: ${pokemon.id}</p>`
+            pokedexSecondDisplay.innerHTML += `<p>Nome: ${pokemon.name}</p>`
+    
+            if (pokemon.types.length == 2) {
+    
+                pokedexSecondDisplay.innerHTML += `<p>Tipo: ${pokemon.types[0].type.name} & ${pokemon.types[1].type.name} </p>`
+    
+            } else if (pokemon.types.length == 1) {
+                pokedexSecondDisplay.innerHTML += `<p>Tipo: ${pokemon.types[0].type.name}</p>`
             }
+    
+            if (pokemon.abilities.length == 3) {
+    
+                pokedexSecondDisplay.innerHTML += `<p>Abilidades: ${pokemon.abilities[0].ability.name} & ${pokemon.abilities[1].ability.name} & ${pokemon.abilities[2].ability.name} </p>`
+    
+            } else if (pokemon.abilities.length == 2) {
+    
+                pokedexSecondDisplay.innerHTML += `<p>Abilidades: ${pokemon.abilities[0].ability.name} & ${pokemon.abilities[1].ability.name} </p>`
+    
+            } else if (pokemon.abilities.length == 1) {
+                pokedexSecondDisplay.innerHTML += `<p>Abilidades: ${pokemon.abilities[0].ability.name}</p>`
+    
+            }
+    
+            pokedexSecondDisplay.innerHTML += `<p>Altura: ${pokemon.height/10} (metros)</p>`
+            pokedexSecondDisplay.innerHTML += `<p>Peso: ${pokemon.weight/10} (kilos)</p>`
 
         }
-        
+      
+    } else if (pokedexDisplay.className == 'pokedex-display-off') {
+        alert('Ligue a pokédex para analisar um pokémon.')
     }
 
-    arrayPokemons = []
+    return
 
-    for (num = 1; num <= localStorage.length; num++) {
+}
 
-        arrayPokemons[num] = (JSON.parse((localStorage.getItem(`pokemon${num}`))))
+const showPokemonCard = () => {
+    const divPokemonList = document.querySelector('#pokemon-list')
+    const pokemons = JSON.parse(localStorage.getItem('pokemons'))
+
+    for (let pokemon of pokemons) {
 
         let divPokemonCard = document.createElement('div')
 
         divPokemonCard.setAttribute('class', 'pokemon-card')
 
-        divPokemonCard.setAttribute('id', `card-${num}`)
+        divPokemonCard.setAttribute('id', `card-${pokemon.id}`)
 
-        let urlPokemonImage = (arrayPokemons[num][6])
+        let urlPokemonImage = (pokemon.front_default)
 
         let pokemonImg = document.createElement('img')
     
@@ -339,96 +335,58 @@ async function getPokemons(showPokemon) {
 
             let idPokemon = Number(divPokemonCard.getAttribute('id').match(numRegEx))
 
-            showPokemon(idPokemon, arrayPokemons)
+            showPokemon(idPokemon)
 
         })
 
     }
 
+    return
 }
 
-const showPokemon = (idPokemon = 0, arrayPokemons = []) => {
 
-    if ((pokedexDisplay.className == 'pokedex-display-on') && (pokedexSecondDisplay.className == 'second-display-on')) {
+const getPokemons = async () => {
+    let arrayPokemons = []
 
-        if (document.querySelector('#pokemon-display-img')) {
+    for (let num = 1; num <= 151; num++) {
+        try {
+            let response = await findPokemons(num)
+            const { id, name, types, abilities, height, weight, sprites: { other: { home: { front_default } } } } = await response.json()
 
-            let removePokemonImg = document.querySelector('#pokemon-display-img')
-
-            pokedexDisplay.removeChild(removePokemonImg)
-           
-        }
-
-        if (idPokemon < 1 || idPokemon > 151) {
-
-            pokedexSecondDisplay.innerHTML = ''
-            
-            pokedexSecondDisplay.innerHTML = `<p>[ERRO!] Pokémon não encontrado.<br/>
-            Somente os 151 pokémons da 1ª geração estão disponíveis.<br/>
-            Verifique o pokémon buscado ou o seu número e tente novamente.</p>`
-
-        } else {
-
-            let urlPokemonImage = arrayPokemons[idPokemon][6]
-
-            let pokemonImg = document.createElement('img')
-    
-            let soundPokemonDisplay = new Audio('sounds/sound-pokemon-display.wav')
-    
-            pokemonImg.setAttribute('src', urlPokemonImage)
-    
-            pokemonImg.setAttribute('id', 'pokemon-display-img')
-    
-            blueLed.style.backgroundColor = '#49B8FA'
-    
-            soundPokemonDisplay.volume -= 0.5
-    
-            soundPokemonDisplay.play()
-    
-            pokedexDisplay.appendChild(pokemonImg)
-    
-            pokedexSecondDisplay.innerHTML = ''
-    
-            pokedexSecondDisplay.innerHTML = `<p>Número: ${arrayPokemons[idPokemon][0]}</p>`
-    
-            pokedexSecondDisplay.innerHTML += `<p>Nome: ${arrayPokemons[idPokemon][1]}</p>`
-    
-            if (arrayPokemons[idPokemon][2].length == 2) {
-    
-                pokedexSecondDisplay.innerHTML += `<p>Tipo: ${arrayPokemons[idPokemon][2][0].type.name} & ${arrayPokemons[idPokemon][2][1].type.name} </p>`
-    
-            } else if (arrayPokemons[idPokemon][2].length == 1) {
-    
-                pokedexSecondDisplay.innerHTML += `<p>Tipo: ${arrayPokemons[idPokemon][2][0].type.name}</p>`
-    
+            const pokemon = {
+                id,
+                name,
+                types,
+                abilities,
+                height,
+                weight,
+                front_default,
             }
-    
-            if (arrayPokemons[idPokemon][3].length == 3) {
-    
-                pokedexSecondDisplay.innerHTML += `<p>Abilidades: ${arrayPokemons[idPokemon][3][0].ability.name} & ${arrayPokemons[idPokemon][3][1].ability.name} & ${arrayPokemons[idPokemon][3][2].ability.name} </p>`
-    
-            } else if (arrayPokemons[idPokemon][3].length == 2) {
-    
-                pokedexSecondDisplay.innerHTML += `<p>Abilidades: ${arrayPokemons[idPokemon][3][0].ability.name} & ${arrayPokemons[idPokemon][3][1].ability.name} </p>`
-    
-            } else if (arrayPokemons[idPokemon][3].length == 1) {
-    
-                pokedexSecondDisplay.innerHTML += `<p>Abilidades: ${arrayPokemons[idPokemon][3][0].ability.name}</p>`
-    
-            }
-    
-            pokedexSecondDisplay.innerHTML += `<p>Altura: ${arrayPokemons[idPokemon][4]/10} (metros)</p>`
-    
-            pokedexSecondDisplay.innerHTML += `<p>Peso: ${arrayPokemons[idPokemon][5]/10} (kilos)</p>`
 
+            arrayPokemons.push(pokemon)
+
+        } catch (error) {
+            console.log(error)
         }
       
-    } else if (pokedexDisplay.className == 'pokedex-display-off') {
-
-        alert('Ligue a pokédex para analisar um pokémon.')
-
     }
+
+    localStorage.setItem('pokemons', JSON.stringify(arrayPokemons))
+    arrayPokemons = []
+
+    showPokemonCard()
+
+    return
 
 }
 
-getPokemons(showPokemon)
+
+(function startPokedex() {
+    if (localStorage.hasOwnProperty('pokemons')) {
+        showPokemonCard()
+        return
+    } else {
+        getPokemons()
+        return
+    }
+})()
