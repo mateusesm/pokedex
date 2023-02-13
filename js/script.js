@@ -216,7 +216,6 @@ const holdTightButton = (id) => {
     soundButton.play()
     button.style.transform = `scale(${0.9})`
     return
-
 }
 
 const dropButton = (id) => {
@@ -227,7 +226,6 @@ const dropButton = (id) => {
 
 
 const findPokemons = async (num) => {
-    await new Promise((resolve => setTimeout(resolve, 100)))
     return fetch(`https://pokeapi.co/api/v2/pokemon/${num}/`)
 }
 
