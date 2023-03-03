@@ -120,11 +120,9 @@ const confirmButton = document.querySelector('#confirm-button')
 confirmButton.addEventListener('mousedown', () => {
 
     if ((pokedexDisplay.className == 'pokedex-display-on') && (pokedexSecondDisplay.className == 'second-display-on') && (document.querySelector('#pokemon-number'))) {
-
         let inputPokemonNumber = document.querySelector('#pokemon-number')
         let idPokemon = Number(inputPokemonNumber.value)
         showPokemon(idPokemon)    
-
     }
 
 })
@@ -238,10 +236,8 @@ const showPokemon = (idPokemon) => {
                 pokedexSecondDisplay.innerHTML += `<p>Abilidades: ${pokemon.abilities[0].ability.name}</p>`
     
             }
-    
             pokedexSecondDisplay.innerHTML += `<p>Altura: ${pokemon.height/10} (metros)</p>`
             pokedexSecondDisplay.innerHTML += `<p>Peso: ${pokemon.weight/10} (kilos)</p>`
-
         }
       
     } else if (pokedexDisplay.className == 'pokedex-display-off') {
@@ -317,7 +313,6 @@ const getPokemons = async () => {
 
     return
 }
-
 
 (function startPokedex() {
     if (localStorage.hasOwnProperty('pokemons')) {
