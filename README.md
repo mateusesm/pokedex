@@ -6,6 +6,4 @@ The pokedex was made with HTML, CSS/SASS and JavaScript and use concepts as flex
 
 Download this repository and open file index.html in your browser from your preference for to see the project.
 
-[Click here to see a pokedex demonstrative video](https://www.linkedin.com/posts/mateusesm_programacao-programador-programadores-activity-6948385127412453377-KDd8?utm_source=share&utm_medium=member_desktop)
-
 [Click here to see the pokedex](https://mateusesm.github.io/pokedex/)
