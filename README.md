@@ -6,8 +6,11 @@ The pokedex was made with HTML, CSS/SASS and JavaScript and use concepts as flex
 
 #### Below have some images:
 
+#### Pokedex in computer
 ![Pokedex empty](./project-images/pokedex-1.png)
 ![Pokedex showing Charizard](./project-images/pokedex-2.png)
+
+#### Pokedex in mobile
 ![Pokedex responsive in mobile](./project-images/pokedex-mobile.png)
 
 Download this repository and open file index.html in your browser from your preference for to see the project.
