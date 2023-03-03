@@ -4,7 +4,7 @@ A Pokemon inspired project that mades available through an API PokeAPI (https://
 
 The pokedex was made with HTML, CSS/SASS and JavaScript and use concepts as flexbox and grid layout in the CSS and async/await and REST API in JavaScript.
 
-#### Below have some images:
+#### Below it's some images:
 
 #### Pokedex in computer
 ![Pokedex empty](./project-images/pokedex-1.png)
